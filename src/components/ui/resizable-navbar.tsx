@@ -232,11 +232,11 @@ export const MobileNavToggle = ({
 export const NavbarLogo = () => {
   return (
     <a
-      href="/"
+      href="/dma"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <img
-        src="/logo.jpeg"
+        src="/dma/logo.jpeg"
         alt="logo"
         width={30}
         height={30}
