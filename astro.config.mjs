@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https:://dma.github.io',
+  site: 'https://edly-software.github.io/dma',
   base: '/dma',
   integrations: [react()],
 
