@@ -25,8 +25,8 @@ export function Hero() {
 				>
 					<Highlight>Erkenne den Unterschied</Highlight> <br />
 					Professionelle
-					<Highlight>Innen- </Highlight>
-					und <Highlight>Außenaufbereitung</Highlight>
+					Innen-
+					und Außenaufbereitung
 					für dein Auto,
 					direkt vor
 					deiner Tür!

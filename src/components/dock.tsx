@@ -18,26 +18,21 @@ export function Dock() {
 			icon: (
 				<Calendar className="h-full w-full text-neutral-500 dark:text-neutral-300" />
 			),
-			href: "#",
+			href: "https://cal.com/dermobileaufbereiter/",
 		},
 		{
 			title: "Before&After",
 			icon: (
 				<CarFront className="h-full w-full text-neutral-500 dark:text-neutral-300" />
 			),
-			href: "#",
+			href: "/before-and-after",
 		},
 		{
 			title: "Instagram",
 			icon: (
 				<Instagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
 			),
-			href: "#",
-		},
-		{
-			title: "TikTok",
-			icon: <IconBrandTiktok className="h-full w-full text-neutral-500 dark:text-neutral-300" />,
-			href: "#",
+			href: "https://www.instagram.com/dermobileaufbereiter",
 		},
 	];
 	return (

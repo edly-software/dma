@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui/button.tsx';
 import { Dock } from '@/components/dock.tsx';
 import { Home } from '@/components/pages/Home.tsx';
+import { Footer } from '@/components/footer.tsx';
 import '../styles/global.css';
 ---
 
@@ -16,5 +17,6 @@ import '../styles/global.css';
 	<body class="font-geist">
 		<Home client:only/>
 		<Dock client:only/>
+		<Footer client:load />
 	</body>
 </html>

@@ -7,8 +7,8 @@ export function GlowingBento() {
 			<GridItem
 				area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
 				icon={<Bubbles className="h-4 w-4 text-black dark:text-neutral-400" />}
-				title="Do things the right way"
-				description="Running out of copy so I'll write anything."
+				title="Innenaufbereitung"
+				description="Die "
 			/>
 
 			<GridItem
