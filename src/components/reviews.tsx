@@ -5,7 +5,7 @@ export function Reviews() {
 		{
 			quote:
 				"Top Service!!Kann ich nur weiter empfehlen sehr schnell und zuverlässig.Auto ist jedesmal wie neu!",
-			name: "Oronzo Bellanova",
+			name: "Weiterer Kunde",
 			designation: "Top Kunde seit 2023",
 			before: "/images/oro_before.png",
 			after: "/images/oro_after.png",
@@ -13,7 +13,7 @@ export function Reviews() {
 		{
 			quote:
 				"DerMobileAufbereiter hat meinen Fahrzeuginnenraum auf ein ganz neues Level gebracht! Jedes Detail wurde mit höchster Präzision gereinigt und aufbereitet. Sitze, Armaturenbrett, Teppiche – alles sieht aus wie neu und riecht frisch. Die professionelle und sorgfältige Arbeit hat mich absolut überzeugt. Wer eine gründliche Innenraumaufbereitung sucht, ist hier genau richtig. Klare Empfehlung! Danke !",
-			name: "Liviu Ghita",
+			name: "Weiterer Kunde",
 			designation: "",
 			before: "/images/liviu_before.png",
 			after: "/images/liviu_after.png",
@@ -21,7 +21,7 @@ export function Reviews() {
 		{
 			quote:
 				"Ich bin total begeistert von der Innenreinigung und Aufbereitung durch ‘Der mobile Aufbereiter’! Vor allem meine hellen Sitze hatten über die Zeit einiges abbekommen, und ich dachte schon, die Flecken würden nie wieder rausgehen. Aber jetzt sieht alles aus wie neu – die Sitze sind wieder strahlend sauber und das ganze Auto riecht frisch.✨",
-			name: "Michelle Steiner",
+			name: "Weiterer Kunde",
 			designation: "",
 			before: "/images/michelle_before.png",
 			after: "/images/michelle_after.png",
