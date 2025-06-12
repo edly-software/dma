@@ -117,10 +117,6 @@ export default function PriceingSection() {
 											<CheckIcon className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
 											<span>Kratzfreie Pflege mit High-End-Produkten</span>
 										</li>
-										<li className="flex items-start gap-3">
-											<CheckIcon className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-											<span>Motorraum wäsche</span>
-										</li>
 									</ul>
 								</div>
 

@@ -15,17 +15,10 @@ import { Button } from "./ui/button";
 export function Navigationbar() {
 	const navItems = [
 		{
-			name: "Features",
-			link: "#features",
-		},
-		{
-			name: "Pricing",
+			name: "Preise",
 			link: "#pricing",
 		},
-		{
-			name: "Contact",
-			link: "#contact",
-		},
+
 	];
 
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
