@@ -25,7 +25,7 @@ export function Dock() {
 			icon: (
 				<CarFront className="h-full w-full text-neutral-500 dark:text-neutral-300" />
 			),
-			href: "/before-and-after",
+			href: "https://www.instagram.com/dermobileaufbereiter",
 		},
 		{
 			title: "Instagram",

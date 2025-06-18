@@ -73,7 +73,7 @@ export function Footer() {
 							<a href="#" className="w-10 h-10 bg-blue-600/20 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-200 group">
 								<Facebook className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
 							</a>
-							<a href="#" className="w-10 h-10 bg-pink-600/20 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-200 group">
+							<a href="https://www.instagram.com/dermobileaufbereiter" className="w-10 h-10 bg-pink-600/20 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-200 group">
 								<Instagram className="w-5 h-5 text-pink-400 group-hover:text-white transition-colors" />
 							</a>
 						</div>
