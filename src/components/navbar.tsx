@@ -30,9 +30,6 @@ export function Navigationbar() {
 				<NavBody>
 					<NavbarLogo />
 					<NavItems items={[]} />
-					<div className="flex items-center gap-4">
-						<ContactDrawer secondary={true} />
-					</div>
 				</NavBody>
 
 				{/* Mobile Navigation */}

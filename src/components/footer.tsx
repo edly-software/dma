@@ -34,7 +34,7 @@ export function Footer() {
 							</div>
 							<div className="flex items-center space-x-3 text-gray-300">
 								<Mail className="w-5 h-5 text-blue-400" />
-								<span>info@dermobileaufbereiter.de</span>
+								<span>dermobileaufbereiter@gmail.com</span>
 							</div>
 							<div className="flex items-center space-x-3 text-gray-300">
 								<MapPin className="w-5 h-5 text-blue-400" />
@@ -70,10 +70,10 @@ export function Footer() {
 					<div className="space-y-6">
 						<h3 className="font-bold text-lg text-white border-b border-blue-500/30 pb-2">Folgen Sie uns</h3>
 						<div className="flex space-x-4">
-							<a href="#" className="w-10 h-10 bg-blue-600/20 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-200 group">
+							<a href="https://www.facebook.com/profile.php?id=61559232703025" target="_blank" className="w-10 h-10 bg-blue-600/20 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-200 group">
 								<Facebook className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
 							</a>
-							<a href="https://www.instagram.com/dermobileaufbereiter" className="w-10 h-10 bg-pink-600/20 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-200 group">
+							<a href="https://www.instagram.com/dermobileaufbereiter" target="_blank" className="w-10 h-10 bg-pink-600/20 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-200 group">
 								<Instagram className="w-5 h-5 text-pink-400 group-hover:text-white transition-colors" />
 							</a>
 						</div>

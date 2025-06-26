@@ -1,5 +1,6 @@
 import { Button } from "./ui/button";
 import { CheckIcon, StarIcon } from "lucide-react";
+import { ContactDrawer } from "./contact-drawer";
 
 export default function PriceingSection() {
 	return (
@@ -62,19 +63,19 @@ export default function PriceingSection() {
 								<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 									<div className="text-center p-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-700 hover:shadow-lg transition-all duration-200">
 										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Kleinwagen</div>
-										<div className="text-2xl font-bold text-blue-600 dark:text-blue-400">65€</div>
-									</div>
-									<div className="text-center p-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-700 hover:shadow-lg transition-all duration-200">
-										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Lim./Kombi</div>
 										<div className="text-2xl font-bold text-blue-600 dark:text-blue-400">75€</div>
 									</div>
 									<div className="text-center p-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-700 hover:shadow-lg transition-all duration-200">
-										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">SUV</div>
+										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Lim./Kombi</div>
 										<div className="text-2xl font-bold text-blue-600 dark:text-blue-400">85€</div>
 									</div>
 									<div className="text-center p-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-700 hover:shadow-lg transition-all duration-200">
-										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">7 Sitzer/TR</div>
+										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">SUV</div>
 										<div className="text-2xl font-bold text-blue-600 dark:text-blue-400">95€</div>
+									</div>
+									<div className="text-center p-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-700 hover:shadow-lg transition-all duration-200">
+										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">7 Sitzer/TR</div>
+										<div className="text-2xl font-bold text-blue-600 dark:text-blue-400">105€</div>
 									</div>
 								</div>
 							</div>
@@ -85,7 +86,7 @@ export default function PriceingSection() {
 					<div className="mb-12">
 						<div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-8 text-center shadow-xl">
 							<h3 className="text-3xl font-bold text-white mb-4">AUSSENREINIGUNG</h3>
-							<p className="text-blue-100 text-lg">Dauer: 60 - 90 Minuten</p>
+							<p className="text-blue-100 text-lg">Dauer: 120 Minuten</p>
 						</div>
 
 						<div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
@@ -124,15 +125,15 @@ export default function PriceingSection() {
 								<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 									<div className="text-center p-4 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl border border-purple-200 dark:border-purple-700 hover:shadow-lg transition-all duration-200">
 										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Kleinwagen</div>
-										<div className="text-2xl font-bold text-purple-600 dark:text-purple-400">75€</div>
-									</div>
-									<div className="text-center p-4 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl border border-purple-200 dark:border-purple-700 hover:shadow-lg transition-all duration-200">
-										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Lim./Kombi</div>
 										<div className="text-2xl font-bold text-purple-600 dark:text-purple-400">85€</div>
 									</div>
 									<div className="text-center p-4 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl border border-purple-200 dark:border-purple-700 hover:shadow-lg transition-all duration-200">
-										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">SUV</div>
+										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">Lim./Kombi</div>
 										<div className="text-2xl font-bold text-purple-600 dark:text-purple-400">95€</div>
+									</div>
+									<div className="text-center p-4 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl border border-purple-200 dark:border-purple-700 hover:shadow-lg transition-all duration-200">
+										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">SUV</div>
+										<div className="text-2xl font-bold text-purple-600 dark:text-purple-400">105€</div>
 									</div>
 									<div className="text-center p-4 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-xl border border-purple-200 dark:border-purple-700 hover:shadow-lg transition-all duration-200">
 										<div className="text-sm text-gray-600 dark:text-gray-400 mb-2">7 Sitzer/TR</div>
@@ -148,11 +149,11 @@ export default function PriceingSection() {
 						<p className="text-lg mb-4">
 							<span className="text-blue-200">Verpassen sie uns nicht!</span> <br />
 						</p>
-						<a href="https://cal.com/dermobileaufbereiter/" className="inline-block">
-							<Button className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl">
+            <div className="flex justify-center items-center gap-2">
+							<ContactDrawer secondary={true}>
 								Jetzt Termin buchen
-							</Button>
-						</a>
+							</ContactDrawer>
+            </div>
 					</div>
 				</div>
 			</section>
