@@ -1,6 +1,6 @@
 "use client";
 
-import { IconArrowLeft, IconArrowRight, IconBrandGoogle } from "@tabler/icons-react";
+import { IconArrowLeft, IconArrowRight, IconBrandGoogle, IconBrandInstagram } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 
 import { useEffect, useState } from "react";
@@ -164,6 +164,10 @@ export const AnimatedTestimonials = ({
           <a href="https://g.co/kgs/RNBDcBy" target="_blank" className="flex gap-2 mt-5">
             <IconBrandGoogle className="h-5 w-5 text-black dark:text-neutral-400" />
             <span>Google Review's</span>
+          </a>
+          <a href="https://instagram.com/dermobileaufbereiter" target="_blank" className="flex gap-2 mt-3">
+            <IconBrandInstagram className="h-5 w-5 text-black dark:text-neutral-400" />
+            <span>Mehr Vorher & Nachher</span>
           </a>
         </div>
       </div>
