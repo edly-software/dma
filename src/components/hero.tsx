@@ -24,13 +24,11 @@ export function Hero() {
 					className="text-center max-w-5xl mx-auto px-4"
 				>
 					<h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-neutral-700 dark:text-white leading-tight lg:leading-tight mb-6">
-						<Highlight className="text-3xl md:text-5xl lg:text-6xl">Erkenne den Unterschied</Highlight>
-						<br className="hidden md:block" />
 						<span className="block mt-2 md:mt-4">
 							Professionelle Innen- und Außenaufbereitung
 						</span>
 						<span className="block mt-2">
-							für dein Auto, direkt vor deiner Tür!
+							für dein Auto, <Highlight className="text-3xl md:text-5xl lg:text-6xl">direkt vor deiner Tür!</Highlight>
 						</span>
 					</h1>
 					<p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -45,7 +43,7 @@ export function Hero() {
 					transition={{ duration: 0.5, delay: 0.2 }}
 					className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 max-w-md mx-auto"
 				>
-					{/* <ContactDrawer secondary={false} /> */}
+					<ContactDrawer secondary={false} />
 					<Button
 						variant={"secondary"}
 						size={"lg"}
