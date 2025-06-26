@@ -56,9 +56,9 @@ export function Navigationbar() {
 								<span className="block">{item.name}</span>
 							</a>
 						))}
-						<div className="flex w-full flex-col gap-4">
+						{/* <div className="flex w-full flex-col gap-4">
 							<ContactDrawer secondary={true} />
-						</div>
+						</div> */}
 					</MobileNavMenu>
 				</MobileNav>
 			</Navbar>

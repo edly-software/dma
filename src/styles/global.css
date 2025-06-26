@@ -117,6 +117,15 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Force light mode always - override browser dark mode preference */
+  :root {
+    color-scheme: light only;
+  }
+  
+  html {
+    color-scheme: light only;
+  }
 }
 
 

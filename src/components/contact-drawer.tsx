@@ -36,8 +36,7 @@ export function ContactDrawer({ secondary }: { secondary?: boolean }) {
 						<DrawerHeader>
 							<DrawerTitle>Kontakt</DrawerTitle>
 							<DrawerDescription>
-								Termine können telefonisch , per Mail oder mit ein
-								Kalendareintrag getätigt werden.
+								Termine können telefonisch oder per Mail getätigt werden.
 							</DrawerDescription>
 						</DrawerHeader>
 						<div>
@@ -51,7 +50,7 @@ export function ContactDrawer({ secondary }: { secondary?: boolean }) {
 									</div>
 								</div>
 							</div>
-							<div className="flex justify-center m-5">
+							{/* <div className="flex justify-center m-5">
 								<a
 									href="https://cal.com/dermobileaufbereiter/"
 									target="_blank"
@@ -62,7 +61,7 @@ export function ContactDrawer({ secondary }: { secondary?: boolean }) {
 										Kalendereintrag erstellen
 									</Button>
 								</a>
-							</div>
+							</div> */}
 						</div>
 						<DrawerFooter>
 							<DrawerClose>

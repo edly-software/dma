@@ -13,13 +13,13 @@ import { Calendar, Car, CarFront, Instagram } from "lucide-react";
 
 export function Dock() {
 	const links = [
-		{
-			title: "Kalendar",
-			icon: (
-				<Calendar className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-			),
-			href: "https://cal.com/dermobileaufbereiter/",
-		},
+		// {
+		// 	title: "Kalendar",
+		// 	icon: (
+		// 		<Calendar className="h-full w-full text-neutral-500 dark:text-neutral-300" />
+		// 	),
+		// 	href: "https://cal.com/dermobileaufbereiter/",
+		// },
 		{
 			title: "Before&After",
 			icon: (

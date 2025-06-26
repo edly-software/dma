@@ -45,7 +45,7 @@ export function Hero() {
 					transition={{ duration: 0.5, delay: 0.2 }}
 					className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 max-w-md mx-auto"
 				>
-					<ContactDrawer secondary={false} />
+					{/* <ContactDrawer secondary={false} /> */}
 					<Button
 						variant={"secondary"}
 						size={"lg"}

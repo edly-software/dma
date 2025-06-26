@@ -149,11 +149,11 @@ export default function PriceingSection() {
 						<p className="text-lg mb-4">
 							<span className="text-blue-200">Verpassen sie uns nicht!</span> <br />
 						</p>
-            <div className="flex justify-center items-center gap-2">
+            {/* <div className="flex justify-center items-center gap-2">
 							<ContactDrawer secondary={true}>
 								Jetzt Termin buchen
 							</ContactDrawer>
-            </div>
+            </div> */}
 					</div>
 				</div>
 			</section>
