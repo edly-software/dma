@@ -6,13 +6,33 @@ import { Footer } from '@/components/footer.tsx';
 import '../styles/global.css';
 ---
 
-<html lang="en">
+<html lang="de">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/jpeg" href="/logo.jpeg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>DerMobileAufbereiter</title>
+		
+		<!-- SEO Meta Tags -->
+		<title>Mobile Autoaufbereitung | DerMobileAufbereiter - Professionelle Fahrzeugpflege vor Ort</title>
+		<meta name="description" content="Professionelle mobile Autoaufbereitung direkt vor Ihrer Tür! Innen- und Außenreinigung für alle Fahrzeugtypen. Termine per E-Mail oder Telefon. Hochwertige Fahrzeugpflege in Memmingen und Umgebung." />
+    <meta name="keywords" content="Mobile Autoaufbereitung, Fahrzeugpflege, Autoreinigung, Innenreinigung, Außenreinigung, Fahrzeugaufbereitung, Auto waschen, Detailing, Mobile Autoreinigung , Detailing Memmingen , Detailing in der nähe Memmingen" />
+		<meta name="author" content="DerMobileAufbereiter" />
+		<meta name="robots" content="index, follow" />
+		
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Mobile Autoaufbereitung | DerMobileAufbereiter - Professionelle Fahrzeugpflege vor Ort" />
+		<meta property="og:description" content="Professionelle mobile Autoaufbereitung direkt vor Ihrer Tür! Innen- und Außenreinigung für alle Fahrzeugtypen. Termine per E-Mail oder Telefon." />
+		<meta property="og:site_name" content="DerMobileAufbereiter" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="de_DE" />
+		
+		<!-- Mobile & Theme -->
+		<meta name="theme-color" content="#2563eb" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 	</head>
 	<body class="font-geist">
 		<Home client:only/>
