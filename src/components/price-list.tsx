@@ -20,7 +20,7 @@ export default function PriceingSection() {
 					<div className="mb-16">
 						<div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-8 text-center shadow-xl">
 							<h3 className="text-3xl font-bold text-white mb-4">INNENREINIGUNG</h3>
-							<p className="text-blue-100 text-lg">Dauer: 60 Minuten</p>
+							<p className="text-blue-100 text-lg">Dauer: ca. 120 Minuten</p>
 						</div>
 
 						<div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">
@@ -86,7 +86,7 @@ export default function PriceingSection() {
 					<div className="mb-12">
 						<div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 mb-8 text-center shadow-xl">
 							<h3 className="text-3xl font-bold text-white mb-4">AUSSENREINIGUNG</h3>
-							<p className="text-blue-100 text-lg">Dauer: 120 Minuten</p>
+							<p className="text-blue-100 text-lg">Dauer: ca. 120 Minuten</p>
 						</div>
 
 						<div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden">

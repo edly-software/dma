@@ -29,7 +29,7 @@ export function Reviews() {
 		},
 		{
 			quote:
-				"Die Innenreinigung war einfach top! Ich habe schon viele Autos reinigen lassen, aber die Arbeit von ‘Der mobile Aufbereiter’ ist wirklich herausragend. Die Liebe zum Detail und die Sorgfalt, mit der alles gemacht wurde, sind bemerkenswert. Mein Auto sieht jetzt aus wie neu und riecht fantastisch. Ich kann diesen Service nur empfehlen!",
+				"Top Jungs mein Auto hat nach der Aufbereitung ausgesehen wie ein Neuwagen kann ich aufjedenfall nur weiterempfehlen👍",
 			name: "Weiterer Kunde",
 			designation: "",
 			before: "/dma/images/weiterer_kunde_before.png",
@@ -37,7 +37,7 @@ export function Reviews() {
 		},
 		{
 			quote:
-				"Ich bin begeistert von der Innenreinigung! Mein Auto sieht aus wie neu und riecht frisch. Die Liebe zum Detail ist beeindruckend. Ich kann diesen Service nur empfehlen!",
+				"Sehr guter Service und extrem freundliches und zuvorkommendes Personal. Das Auto vom sehr schlechten Zustand zu einem Neuwagen – das nenne ich Top-Arbeit, sehr empfehlenswert!",
 			name: "Weiterer Kunde",
 			designation: "",
 			before: "/dma/images/weiter_before.png",
