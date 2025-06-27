@@ -95,9 +95,8 @@ export function Footer() {
 							© {year} DerMobileAufbereiter. Alle Rechte vorbehalten.
 						</p>
 						<div className="flex space-x-6 text-sm">
-							<a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Datenschutz</a>
-							<a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Impressum</a>
-							<a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">AGB</a>
+							<a href="/datenschutz" className="text-gray-400 hover:text-blue-400 transition-colors">Datenschutz</a>
+							<a href="/impressum" className="text-gray-400 hover:text-blue-400 transition-colors">Impressum</a>
 						</div>
 					</div>
 				</div>
