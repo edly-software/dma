@@ -61,8 +61,11 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Install dependencies
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Clean npm cache and node_modules
+        run: rm -rf node_modules package-lock.json
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Install dependencies with npm
+        run: npm install
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
