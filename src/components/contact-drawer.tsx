@@ -1,4 +1,4 @@
-import { CalendarDaysIcon, PhoneIcon, ClipboardIcon, CheckIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon, ClipboardIcon, CheckIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/button";
 import {
 	Drawer,
@@ -13,7 +13,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 
-export function ContactDrawer({ secondary }: { secondary?: boolean }) {
+export function ContactDrawer({ secondary, size = "lg" }: { secondary?: boolean; size?: "sm" | "default" | "lg" }) {
 	const [copiedItem, setCopiedItem] = useState<string | null>(null);
 
 	const copyToClipboard = async (text: string, type: string) => {
@@ -30,11 +30,11 @@ export function ContactDrawer({ secondary }: { secondary?: boolean }) {
 			<Drawer>
 				<DrawerTrigger asChild>
 					{
-						secondary ? <Button size={"sm"} variant={'secondary'} className="flex gap-2 text-md w-full sm:w-auto">
+						secondary ? <Button size={size} variant={'secondary'} className="flex gap-2 text-md w-full sm:w-auto">
 							<p>Termin vereinbaren</p>
 						</Button>
 							:
-							<Button size={"lg"} className="flex gap-2 text-md w-full sm:w-auto">
+							<Button size={size} className="flex gap-2 text-md w-full sm:w-auto">
 								<PhoneIcon className="w-4 h-4 text-white" />
 								<p>Termin vereinbaren</p>
 							</Button>
