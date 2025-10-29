@@ -53,7 +53,7 @@ jobs:
           else
             echo "Unable to determine package manager"
             exit 1
-          fi
+           fi
        - name: Setup Node
          uses: actions/setup-node@v4
          with:
@@ -71,7 +71,7 @@ jobs:
        - name: Rebuild native modules
          run: npm rebuild rollup
          working-directory: ${{ env.BUILD_PATH }}
-      - name: Build with Astro
+       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
             --site "${{ steps.pages.outputs.origin }}" \
