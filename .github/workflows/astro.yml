@@ -66,10 +66,8 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
-      - name: Clean npm cache
-        run: npm cache clean --force
-      - name: Rebuild native modules
-        run: npm rebuild rollup
+      - name: Install rollup Linux binary
+        run: npm install --save-optional @rollup/rollup-linux-x64-gnu
         working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: |
