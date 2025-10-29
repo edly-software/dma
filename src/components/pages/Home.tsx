@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button"
-import { ResponsiveDiv } from "@/components/responsive-div"
 import PriceingSection from "@/components/price-list"
 import { GlowingBento } from "../glowing-bento"
 import { Hero } from "../hero"
