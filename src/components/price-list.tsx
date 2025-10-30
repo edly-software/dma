@@ -54,7 +54,7 @@ const pricingCategories = [
 		name: "1 STUFIGE POLITUR",
 		description: "Professionelle Politur",
 		basePrice: 280,
-		duration: "ca. 180 Min",
+		duration: "",
 		isPopular: false,
 		prices: [
 			{ type: "Kleinwagen", price: 280 },
@@ -76,7 +76,7 @@ const pricingCategories = [
 		name: "2 STUFIGE POLITUR",
 		description: "Professionelle Politur Premium",
 		basePrice: 360,
-		duration: "ca. 240 Min",
+		duration: "",
 		isPopular: false,
 		prices: [
 			{ type: "Kleinwagen", price: 360 },
@@ -154,9 +154,11 @@ const PriceCard = ({ card }: { card: PricingCard }) => {
 								<span className="text-3xl md:text-4xl font-bold text-white group-hover:text-blue-400 transition-colors">
 									ab {card.basePrice}€
 								</span>
-								<span className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
-									/{card.duration}
-								</span>
+								{card.duration && (
+									<span className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
+										/{card.duration}
+									</span>
+								)}
 								<span className="ml-2 text-xs px-2 py-1 bg-blue-500/20 text-blue-300 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
 									Klick für Details
 								</span>
