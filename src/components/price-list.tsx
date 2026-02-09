@@ -1,10 +1,15 @@
 'use client';
 
-import { CheckIcon, Flame } from "lucide-react";
+import { CheckIcon, Flame, Car, CarFront, Truck, Bus } from "lucide-react";
 import { ContactDrawer } from "./contact-drawer";
 import { motion } from "motion/react";
 
-const vehicleTypes = ["Kleinwagen", "Lim./Kombi", "SUV", "7 Sitzer/TR"];
+const vehicleTypes = [
+	{ label: "Kleinwagen", icon: Car },
+	{ label: "Lim./Kombi", icon: CarFront },
+	{ label: "SUV", icon: Truck },
+	{ label: "7 Sitzer/TR", icon: Bus },
+];
 
 const pricingCategories = [
 	{
@@ -145,11 +150,12 @@ const PriceSection = ({ category, index }: { category: PricingCategory; index: n
 				{/* Price Table - Right Side */}
 				<div className="order-1 lg:order-2">
 					<div className="grid grid-cols-4 gap-2 md:gap-3 min-w-0 lg:min-w-[420px]">
-						{/* Column Headers */}
-						{vehicleTypes.map((type) => (
-							<div key={type} className="text-center">
-								<span className="text-[11px] md:text-xs font-medium text-gray-400 leading-tight block">
-									{type}
+						{/* Column Headers with Icons */}
+						{vehicleTypes.map((vt) => (
+							<div key={vt.label} className="flex flex-col items-center gap-1.5 pb-2">
+								<vt.icon className="h-6 w-6 md:h-7 md:w-7 text-yellow-400" />
+								<span className="text-[11px] md:text-xs font-medium text-gray-400 leading-tight text-center">
+									{vt.label}
 								</span>
 							</div>
 						))}
