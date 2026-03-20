@@ -6,10 +6,10 @@ import { ContactDrawer } from "@/components/contact-drawer";
 import { useState, useEffect } from "react";
 
 const heroImages = [
-	"/images/IMG-20260227-WA0013.jpg",
+	"/images/IMG-20260320-WA0013.jpg",
 	"/images/IMG-20260320-WA0014.jpg",
 	"/images/IMG-20260320-WA0015.jpg",
-	"/images/IMG-20260320-WA0030.jpg",
+	"/images/IMG-20260227-WA0030.jpg",
 	"/images/IMG-20260320-WA0029.jpg",
 	"/images/IMG-20260320-WA0022.jpg",
 ];
