@@ -11,9 +11,7 @@ export function Home() {
 			</div>
 			<div className="font-geist">
 				{/* Hero Section */}
-				<div className="md:p-10 md:grid place-items-center mt-5">
-					<Hero />
-				</div>
+				<Hero />
 				
 				{/* Services Section */}
 				<GlowingBento />
