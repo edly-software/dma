@@ -6,10 +6,14 @@ export function GlowingBento() {
 		<section className="py-12 md:py-20">
 			<div className="container mx-auto px-4 md:px-6">
 				<div className="mx-auto max-w-4xl text-center mb-12">
+					<div className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/50 px-4 py-1.5 text-sm font-medium text-blue-600 dark:text-blue-400 mb-4">
+						<Sparkles className="h-3.5 w-3.5" />
+						Unsere Leistungen
+					</div>
 					<h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-4">
 						Unsere Services
 					</h2>
-					<p className="text-lg text-gray-500 dark:text-gray-400">
+					<p className="text-lg text-gray-600 dark:text-gray-300">
 						Professionelle Autoaufbereitung direkt vor Ihrer Haustür
 					</p>
 				</div>
