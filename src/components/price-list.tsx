@@ -67,6 +67,7 @@ const pricingCategories = [
 			{ type: "7 Sitzer/TR", price: 400 },
 		],
 		features: [
+			"Innenreinigun",
 			"Außenreinigung",
 			"Lackreinigung",
 			"Politur Stufe 1 – leichte Swirls & Kratzer entfernen, Glanz auffrischen",
@@ -87,6 +88,7 @@ const pricingCategories = [
 			{ type: "7 Sitzer/TR", price: 480 },
 		],
 		features: [
+			"Innenreinigung",
 			"Außenreinigung",
 			"Lackreinigung",
 			"Politur Stufe 1 – starke Kratzer entfernen",
