@@ -145,6 +145,9 @@ export function Hero() {
 								Glanz olè!
 							</span>
 						</h1>
+						
+						{/* SEO-optimized subtitle for accessibility and search engines */}
+						<h2 className="sr-only">Mobile Autoaufbereitung und Fahrzeugpflege in Memmingen</h2>
 
 						<p className="text-base sm:text-lg xl:text-xl 2xl:text-2xl text-white/60 mb-8 leading-relaxed font-light max-w-xl xl:max-w-2xl">
 							Professionelle Innen- und Außenaufbereitung –{" "}

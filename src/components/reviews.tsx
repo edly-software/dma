@@ -137,7 +137,7 @@ export function Reviews() {
 						>
 							<img
 								src={src}
-								alt={`Aufbereitung ${i + 1}`}
+								alt={`Professionelle Autoaufbereitung in Memmingen - Vorher Nachher Ergebnis ${i + 1}`}
 								className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
 								loading="lazy"
 							/>

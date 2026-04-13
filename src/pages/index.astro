@@ -12,20 +12,29 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		
 		<!-- SEO Meta Tags -->
-		<title>Mobile Autoaufbereitung | DerMobileAufbereiter - Professionelle Fahrzeugpflege vor Ort</title>
-		<meta name="description" content="Professionelle mobile Autoaufbereitung direkt vor Ihrer Tür! Innen- und Außenreinigung für alle Fahrzeugtypen. Termine per E-Mail oder Telefon. Hochwertige Fahrzeugpflege in Memmingen und Umgebung." />
-    <meta name="keywords" content="Mobile Autoaufbereitung, Fahrzeugpflege, Autoreinigung, Innenreinigung, Außenreinigung, Fahrzeugaufbereitung, Auto waschen, Detailing, Mobile Autoreinigung , Detailing Memmingen , Detailing in der nähe Memmingen" />
+		<title>Mobile Autoaufbereitung Memmingen | DerMobileAufbereiter - Professionelle Fahrzeugpflege</title>
+		<meta name="description" content="Professionelle mobile Autoaufbereitung in Memmingen direkt vor Ihrer Tür! Innen- und Außenreinigung für alle Fahrzeugtypen. Termine per E-Mail oder Telefon vereinbaren." />
+		<meta name="keywords" content="Mobile Autoaufbereitung Memmingen, Fahrzeugpflege Memmingen, Autoreinigung Memmingen, Innenreinigung, Außenreinigung, Fahrzeugaufbereitung, Auto waschen, Detailing Memmingen, Mobile Autoreinigung, Autopflege Memmingen" />
 		<meta name="author" content="DerMobileAufbereiter" />
 		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://www.dermobileaufbereiter.de/" />
 		
 		<!-- Open Graph Meta Tags -->
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="Mobile Autoaufbereitung | DerMobileAufbereiter - Professionelle Fahrzeugpflege vor Ort" />
-		<meta property="og:description" content="Professionelle mobile Autoaufbereitung direkt vor Ihrer Tür! Innen- und Außenreinigung für alle Fahrzeugtypen. Termine per E-Mail oder Telefon." />
+		<meta property="og:url" content="https://www.dermobileaufbereiter.de/" />
+		<meta property="og:title" content="Mobile Autoaufbereitung Memmingen | DerMobileAufbereiter" />
+		<meta property="og:description" content="Professionelle mobile Autoaufbereitung in Memmingen direkt vor Ihrer Tür! Innen- und Außenreinigung für alle Fahrzeugtypen." />
 		<meta property="og:site_name" content="DerMobileAufbereiter" />
+		<meta property="og:image" content="https://www.dermobileaufbereiter.de/logo.jpeg" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:locale" content="de_DE" />
+		
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Mobile Autoaufbereitung Memmingen | DerMobileAufbereiter" />
+		<meta name="twitter:description" content="Professionelle mobile Autoaufbereitung in Memmingen direkt vor Ihrer Tür!" />
+		<meta name="twitter:image" content="https://www.dermobileaufbereiter.de/logo.jpeg" />
 		
 		<!-- Mobile & Theme -->
 		<meta name="theme-color" content="#2563eb" />
@@ -35,6 +44,50 @@ import '../styles/global.css';
 		<!-- Plausible Analytics -->
 		<script defer data-domain="dermobileaufbereiter.de" src="https://analytics.roomhoster-studio.de/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"></script>
 		<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+		
+		<!-- Structured Data: LocalBusiness -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "AutoDetailing",
+			"name": "DerMobileAufbereiter",
+			"description": "Professionelle mobile Autoaufbereitung in Memmingen. Innen- und Außenreinigung, Politur und Fahrzeugpflege direkt vor Ort.",
+			"url": "https://www.dermobileaufbereiter.de",
+			"telephone": "+4917643190053",
+			"email": "dermobileaufbereiter@gmail.com",
+			"areaServed": {
+				"@type": "City",
+				"name": "Memmingen"
+			},
+			"serviceType": [
+				"Innenreinigung",
+				"Außenreinigung",
+				"Lackpolitur",
+				"Keramikversiegelung",
+				"Fahrzeugaufbereitung"
+			],
+			"priceRange": "$$",
+			"image": "https://www.dermobileaufbereiter.de/logo.jpeg",
+			"sameAs": [
+				"https://instagram.com/dermobileaufbereiter"
+			]
+		}
+		</script>
+		
+		<!-- Structured Data: WebSite -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "DerMobileAufbereiter",
+			"url": "https://www.dermobileaufbereiter.de",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://www.dermobileaufbereiter.de/?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		}
+		</script>
 	</head>
 	<body class="font-geist">
 		<Home client:only/>
