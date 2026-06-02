@@ -21,7 +21,7 @@ export function Home() {
         <PriceingSection />
 
         {/* Reviews Section */}
-        <div className="py-12 md:py-20">
+        <div id="bewertungen" className="scroll-mt-20 py-12 md:py-20">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-4xl text-center mb-12">
               <div className="inline-flex items-center gap-2 rounded-full border border-yellow-200 dark:border-yellow-800 bg-yellow-50 dark:bg-yellow-950/50 px-4 py-1.5 text-sm font-medium text-yellow-600 dark:text-yellow-400 mb-4">

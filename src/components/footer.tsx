@@ -1,103 +1,180 @@
+import {
+	ArrowUpRight,
+	Clock3,
+	Facebook,
+	Instagram,
+	Mail,
+	MapPin,
+	Phone,
+} from "lucide-react";
 
-import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
+const navigation = [
+	{ label: "Leistungen", href: "#leistungen" },
+	{ label: "Preise", href: "#preise" },
+	{ label: "Kundenstimmen", href: "#bewertungen" },
+];
+
+const contact = [
+	{
+		label: "Anrufen",
+		value: "+49 176 43190053",
+		href: "tel:+4917643190053",
+		icon: Phone,
+	},
+	{
+		label: "E-Mail schreiben",
+		value: "dermobileaufbereiter@gmail.com",
+		href: "mailto:dermobileaufbereiter@gmail.com",
+		icon: Mail,
+	},
+	{
+		label: "Servicegebiet",
+		value: "Memmingen und Umgebung",
+		icon: MapPin,
+	},
+];
+
+const social = [
+	{
+		label: "Instagram",
+		href: "https://www.instagram.com/dermobileaufbereiter",
+		icon: Instagram,
+	},
+	{
+		label: "Facebook",
+		href: "https://www.facebook.com/profile.php?id=61559232703025",
+		icon: Facebook,
+	},
+];
 
 export function Footer() {
 	const year = new Date().getFullYear();
+
 	return (
-		<footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
-			{/* Background Pattern */}
-			<div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.02%22%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%2230%22%20r%3D%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+		<footer className="relative isolate overflow-hidden bg-[#050508] text-white">
+			<div
+				className="absolute inset-0 -z-20 opacity-70"
+				style={{
+					backgroundImage:
+						"radial-gradient(circle at 10% 10%, rgba(34, 211, 238, 0.16), transparent 24rem), radial-gradient(circle at 90% 75%, rgba(59, 130, 246, 0.16), transparent 28rem)",
+				}}
+			/>
+			<div
+				className="absolute inset-0 -z-10 opacity-35"
+				style={{
+					backgroundImage:
+						"radial-gradient(circle, rgba(255,255,255,0.16) 1px, transparent 1px)",
+					backgroundSize: "28px 28px",
+				}}
+			/>
 
-			<div className="container mx-auto px-4 py-12 relative z-10">
-				<div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-					{/* Company Info */}
-					<div className="md:col-span-2 space-y-6">
-						<div className="flex items-center space-x-3">
-							<div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
-								<span className="text-white font-bold text-lg">DMA</span>
-							</div>
-							<div>
-								<h3 className="font-bold text-xl text-white">DerMobileAufbereiter</h3>
-								<p className="text-blue-300 text-sm">Professionelle Autoaufbereitung</p>
-							</div>
-						</div>
-						<p className="text-gray-300 text-base leading-relaxed max-w-md">
-							Erleben Sie erstklassige Autoaufbereitung direkt vor Ihrer Tür.
-							Wir bringen Ihr Fahrzeug zum Glänzen - mit Leidenschaft und Präzision.
+			<div className="container mx-auto px-4 md:px-6">
+				<div className="grid gap-10 px-1 py-12 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_1fr] lg:gap-14 lg:py-16">
+					<div>
+						<a
+							href="/"
+							className="group inline-flex items-center gap-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
+							aria-label="DerMobileAufbereiter Startseite"
+						>
+							<span className="grid h-11 w-11 place-items-center rounded-xl border border-cyan-300/20 bg-cyan-300/10 text-sm font-black tracking-tight text-cyan-100">
+								DMA
+							</span>
+							<span>
+								<span className="block font-bold tracking-tight">
+									DerMobileAufbereiter
+								</span>
+								<span className="block text-sm text-white/50">
+									Mobile Fahrzeugpflege
+								</span>
+							</span>
+						</a>
+						<p className="mt-5 max-w-md text-sm leading-6 text-white/55 text-pretty">
+							Professionelle Autoaufbereitung mit Präzision, hochwertigen
+							Produkten und einem Service, der zu dir kommt.
 						</p>
-
-						{/* Contact Info */}
-						<div className="space-y-3">
-							<div className="flex items-center space-x-3 text-gray-300">
-								<Phone className="w-5 h-5 text-blue-400" />
-								<span>+49 176 43190053</span>
-							</div>
-							<div className="flex items-center space-x-3 text-gray-300">
-								<Mail className="w-5 h-5 text-blue-400" />
-								<span>dermobileaufbereiter@gmail.com</span>
-							</div>
-							<div className="flex items-center space-x-3 text-gray-300">
-								<MapPin className="w-5 h-5 text-blue-400" />
-								<span>Mobiler Service in Memmingen Deutschland</span>
-							</div>
+						<div className="mt-6 flex items-center gap-3">
+							{social.map(({ label, href, icon: Icon }) => (
+								<a
+									key={label}
+									href={href}
+									target="_blank"
+									rel="noreferrer"
+									aria-label={`${label} öffnen`}
+									className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/[0.06] text-white/70 transition-colors hover:border-cyan-300/50 hover:bg-cyan-300/10 hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
+								>
+									<Icon className="h-5 w-5" aria-hidden="true" />
+								</a>
+							))}
 						</div>
 					</div>
 
-					{/* Services */}
-					<div className="space-y-6">
-						<h3 className="font-bold text-lg text-white border-b border-blue-500/30 pb-2">Unsere Services</h3>
-						<ul className="space-y-3">
-							<li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2 group">
-								<span className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-blue-300 transition-colors"></span>
-								<span>Innenaufbereitung</span>
-							</a></li>
-							<li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2 group">
-								<span className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-blue-300 transition-colors"></span>
-								<span>Außenaufbereitung</span>
-							</a></li>
-							<li><a href="#" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2 group">
-								<span className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-blue-300 transition-colors"></span>
-								<span>Komplett-Service</span>
-							</a></li>
-							<li><a href="#preise" className="text-gray-300 hover:text-blue-400 transition-colors duration-200 flex items-center space-x-2 group">
-								<span className="w-1.5 h-1.5 bg-blue-400 rounded-full group-hover:bg-blue-300 transition-colors"></span>
-								<span>Preisliste</span>
-							</a></li>
-						</ul>
-					</div>
-
-					{/* Social Media */}
-					<div className="space-y-6">
-						<h3 className="font-bold text-lg text-white border-b border-blue-500/30 pb-2">Folgen Sie uns</h3>
-						<div className="flex space-x-4">
-							<a href="https://www.facebook.com/profile.php?id=61559232703025" target="_blank" className="w-10 h-10 bg-blue-600/20 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-200 group">
-								<Facebook className="w-5 h-5 text-blue-400 group-hover:text-white transition-colors" />
-							</a>
-							<a href="https://www.instagram.com/dermobileaufbereiter" target="_blank" className="w-10 h-10 bg-pink-600/20 hover:bg-pink-600 rounded-lg flex items-center justify-center transition-all duration-200 group">
-								<Instagram className="w-5 h-5 text-pink-400 group-hover:text-white transition-colors" />
-							</a>
-						</div>
-						<div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-lg p-4 border border-blue-500/20">
-							<p className="text-sm text-gray-300 mb-2">📱 Folgen Sie uns für:</p>
-							<ul className="text-xs text-gray-400 space-y-1">
-								<li>• Vorher-Nachher Bilder</li>
-								<li>• Pflegetipps</li>
-								<li>• Sonderangebote</li>
+					<div>
+						<h3 className="text-sm font-semibold tracking-[0.16em] text-white/45 uppercase">
+							Entdecken
+						</h3>
+						<nav className="mt-5" aria-label="Footer Navigation">
+							<ul className="space-y-1">
+								{navigation.map(({ label, href }) => (
+									<li key={href}>
+										<a
+											href={href}
+											className="group inline-flex min-h-9 items-center gap-1.5 text-sm text-white/70 transition-colors hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
+										>
+											{label}
+											<ArrowUpRight
+												className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100"
+												aria-hidden="true"
+											/>
+										</a>
+									</li>
+								))}
 							</ul>
-						</div>
+						</nav>
+					</div>
+
+					<div>
+						<h3 className="text-sm font-semibold tracking-[0.16em] text-white/45 uppercase">
+							Kontakt
+						</h3>
+						<ul className="mt-5 space-y-4">
+							{contact.map(({ label, value, href, icon: Icon }) => (
+								<li key={label} className="flex gap-3">
+									<Icon
+										className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300"
+										aria-hidden="true"
+									/>
+									<div>
+										<p className="text-xs text-white/40">{label}</p>
+										{href ? (
+											<a
+												href={href}
+												className="break-all text-sm text-white/75 transition-colors hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
+											>
+												{value}
+											</a>
+										) : (
+											<p className="text-sm text-white/75">{value}</p>
+										)}
+									</div>
+								</li>
+							))}
+						</ul>
+						<p className="mt-5 flex items-center gap-2 text-xs text-white/45">
+							<Clock3 className="h-4 w-4 text-cyan-300" aria-hidden="true" />
+							Termine nach Vereinbarung
+						</p>
 					</div>
 				</div>
 
-				{/* Bottom Bar */}
-				<div className="border-t border-gray-700 pt-8">
-					<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-						<p className="text-gray-400 text-sm">
-							© {year} DerMobileAufbereiter. Alle Rechte vorbehalten.
-						</p>
-						<div className="flex space-x-6 text-sm">
-							<a href="/datenschutz" className="text-gray-400 hover:text-blue-400 transition-colors">Datenschutz</a>
-							<a href="/impressum" className="text-gray-400 hover:text-blue-400 transition-colors">Impressum</a>
-						</div>
+				<div className="flex flex-col gap-4 border-t border-white/10 px-1 py-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+					<p>© {year} DerMobileAufbereiter. Alle Rechte vorbehalten.</p>
+					<div className="flex gap-5">
+						<a className="transition-colors hover:text-cyan-200" href="/datenschutz">
+							Datenschutz
+						</a>
+						<a className="transition-colors hover:text-cyan-200" href="/impressum">
+							Impressum
+						</a>
 					</div>
 				</div>
 			</div>
