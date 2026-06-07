@@ -1,4 +1,4 @@
-import { PhoneIcon, ClipboardIcon, CheckIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon, ClipboardIcon, CheckIcon, EnvelopeIcon, ChatBubbleLeftRightIcon } from "@heroicons/react/24/outline";
 import { Button } from "@/components/ui/button";
 import {
 	Drawer,
@@ -13,8 +13,25 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 
-export function ContactDrawer({ secondary, size = "lg" }: { secondary?: boolean; size?: "sm" | "default" | "lg" }) {
+const phoneNumber = "017643190053";
+const internationalPhoneNumber = "+4917643190053";
+const emailAddress = "dermobileaufbereiter@gmail.com";
+
+export function ContactDrawer({
+	secondary,
+	size = "lg",
+	label = "Termin vereinbaren",
+	service,
+}: {
+	secondary?: boolean;
+	size?: "sm" | "default" | "lg";
+	label?: string;
+	service?: string;
+}) {
 	const [copiedItem, setCopiedItem] = useState<string | null>(null);
+	const message = `Hallo, ich interessiere mich für ${service ?? "eine mobile Autoaufbereitung"}. Wann wäre ein Termin möglich?`;
+	const encodedMessage = encodeURIComponent(message);
+	const mailSubject = encodeURIComponent(`Terminanfrage: ${service ?? "Mobile Autoaufbereitung"}`);
 
 	const copyToClipboard = async (text: string, type: string) => {
 		try {
@@ -31,34 +48,71 @@ export function ContactDrawer({ secondary, size = "lg" }: { secondary?: boolean;
 				<DrawerTrigger asChild>
 					{
 						secondary ? <Button size={size} variant={'secondary'} className="flex gap-2 text-md w-full sm:w-auto">
-							<p>Termin vereinbaren</p>
+							<p>{label}</p>
 						</Button>
 							:
 							<Button size={size} className="flex gap-2 text-md w-full sm:w-auto">
 								<PhoneIcon className="w-4 h-4 text-white" />
-								<p>Termin vereinbaren</p>
+								<p>{label}</p>
 							</Button>
 					}
 				</DrawerTrigger>
 				<DrawerContent>
-					<div className="mx-auto w-full max-w-sm">
+					<div className="mx-auto w-full max-w-md">
 						<DrawerHeader>
-							<DrawerTitle>Kontakt</DrawerTitle>
+							<DrawerTitle className="text-xl">Termin anfragen</DrawerTitle>
 							<DrawerDescription>
-								Termine können telefonisch oder per Mail getätigt werden.
+								{service
+									? `Schnellkontakt für ${service}.`
+									: "Wählen Sie den schnellsten Weg für Ihre Anfrage."}
 							</DrawerDescription>
 						</DrawerHeader>
 						<div>
 							<div className="p-4">
 								<div>
+									<div className="grid gap-3">
+										<a
+											href={`tel:${internationalPhoneNumber}`}
+											className="flex min-h-14 items-center justify-center gap-3 rounded-lg bg-gray-950 px-4 py-3 text-base font-semibold text-white transition hover:bg-gray-800"
+										>
+											<PhoneIcon className="h-5 w-5" />
+											Jetzt anrufen
+										</a>
+										<a
+											href={`https://wa.me/${internationalPhoneNumber.replace("+", "")}?text=${encodedMessage}`}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex min-h-14 items-center justify-center gap-3 rounded-lg bg-green-600 px-4 py-3 text-base font-semibold text-white transition hover:bg-green-700"
+										>
+											<ChatBubbleLeftRightIcon className="h-5 w-5" />
+											Per WhatsApp anfragen
+										</a>
+										<a
+											href={`mailto:${emailAddress}?subject=${mailSubject}&body=${encodedMessage}`}
+											className="flex min-h-14 items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base font-semibold text-gray-950 transition hover:bg-gray-50"
+										>
+											<EnvelopeIcon className="h-5 w-5" />
+											E-Mail vorbereiten
+										</a>
+									</div>
+
+									<div className="mt-4 rounded-lg bg-yellow-50 p-4 text-sm leading-relaxed text-yellow-900">
+										Tipp: Senden Sie Fahrzeugmodell, gewünschte Leistung und 2-3
+										mögliche Termine mit. Dann kann ich schneller ein konkretes
+										Angebot machen.
+									</div>
+
 									<Separator className="my-4" />
+									<p className="mb-3 text-sm font-medium text-gray-500">
+										Kontakt kopieren
+									</p>
 									<div className="space-y-3">
 										<div className="relative">
 											<button
-												onClick={() => copyToClipboard('dermobileaufbereiter@gmail.com', 'email')}
+												onClick={() => copyToClipboard(emailAddress, 'email')}
 												className="group flex items-center gap-2 w-full p-3 bg-blue-50 hover:bg-blue-100 rounded-lg border border-blue-200 hover:border-blue-300 transition-all duration-200"
 											>
-												<div className="text-blue-600 font-medium flex-1">dermobileaufbereiter@gmail.com</div>
+												<div className="text-blue-600 font-medium flex-1">{emailAddress}</div>
 												{copiedItem === 'email' ? (
 													<CheckIcon className="w-4 h-4 text-green-600" />
 												) : (
@@ -73,10 +127,10 @@ export function ContactDrawer({ secondary, size = "lg" }: { secondary?: boolean;
 										</div>
 										<div className="relative">
 											<button
-												onClick={() => copyToClipboard('017643190053', 'phone')}
+												onClick={() => copyToClipboard(phoneNumber, 'phone')}
 												className="group flex items-center gap-2 w-full p-3 bg-green-50 hover:bg-green-100 rounded-lg border border-green-200 hover:border-green-300 transition-all duration-200"
 											>
-												<div className="text-green-600 font-medium flex-1">017643190053</div>
+												<div className="text-green-600 font-medium flex-1">{phoneNumber}</div>
 												{copiedItem === 'phone' ? (
 													<CheckIcon className="w-4 h-4 text-green-600" />
 												) : (
