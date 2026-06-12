@@ -69,7 +69,7 @@ const serviceOffers = [
 		title: "Politur & Lackfinish",
 		description:
 			"Professionelle Lackreinigung mit 1- oder 2-stufiger Politur. Entfernt matte Stellen, leichte Swirls und bringt Tiefe zurück in den Lack.",
-		image: "/images/liviu_after.png",
+		image: "/images/politur-lackfinish.jpg",
 		alt: "Aufbereiteter Fahrzeuglack mit sichtbarem Glanz nach professioneller Politur",
 		price: "ab 280 EUR",
 		duration: "nach Zustand",
