@@ -10,7 +10,6 @@ import {
 	DrawerTitle,
 	DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
 
 const phoneNumber = "017643190053";
@@ -71,13 +70,28 @@ export function ContactDrawer({
 							<div className="p-4">
 								<div>
 									<div className="grid gap-3">
-										<a
-											href={`tel:${internationalPhoneNumber}`}
-											className="flex min-h-14 items-center justify-center gap-3 rounded-lg bg-gray-950 px-4 py-3 text-base font-semibold text-white transition hover:bg-gray-800"
-										>
-											<PhoneIcon className="h-5 w-5" />
-											Jetzt anrufen
-										</a>
+										<div className="flex gap-2">
+											<a
+												href={`tel:${internationalPhoneNumber}`}
+												className="flex min-h-14 flex-1 items-center justify-center gap-3 rounded-lg bg-gray-950 px-4 py-3 text-base font-semibold text-white transition hover:bg-gray-800"
+											>
+												<PhoneIcon className="h-5 w-5" />
+												Jetzt anrufen
+											</a>
+											<button
+												type="button"
+												onClick={() => copyToClipboard(phoneNumber, 'phone')}
+												className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg border border-gray-300 bg-white text-gray-950 transition hover:bg-gray-50"
+												aria-label="Telefonnummer kopieren"
+												title="Telefonnummer kopieren"
+											>
+												{copiedItem === 'phone' ? (
+													<CheckIcon className="h-5 w-5 text-green-600" />
+												) : (
+													<ClipboardIcon className="h-5 w-5" />
+												)}
+											</button>
+										</div>
 										<a
 											href={`https://wa.me/${internationalPhoneNumber.replace("+", "")}?text=${encodedMessage}`}
 											target="_blank"
@@ -87,13 +101,28 @@ export function ContactDrawer({
 											<ChatBubbleLeftRightIcon className="h-5 w-5" />
 											Per WhatsApp anfragen
 										</a>
-										<a
-											href={`mailto:${emailAddress}?subject=${mailSubject}&body=${encodedMessage}`}
-											className="flex min-h-14 items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base font-semibold text-gray-950 transition hover:bg-gray-50"
-										>
-											<EnvelopeIcon className="h-5 w-5" />
-											E-Mail vorbereiten
-										</a>
+										<div className="flex gap-2">
+											<a
+												href={`mailto:${emailAddress}?subject=${mailSubject}&body=${encodedMessage}`}
+												className="flex min-h-14 flex-1 items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white px-4 py-3 text-base font-semibold text-gray-950 transition hover:bg-gray-50"
+											>
+												<EnvelopeIcon className="h-5 w-5" />
+												E-Mail vorbereiten
+											</a>
+											<button
+												type="button"
+												onClick={() => copyToClipboard(emailAddress, 'email')}
+												className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg border border-gray-300 bg-white text-gray-950 transition hover:bg-gray-50"
+												aria-label="E-Mail-Adresse kopieren"
+												title="E-Mail-Adresse kopieren"
+											>
+												{copiedItem === 'email' ? (
+													<CheckIcon className="h-5 w-5 text-green-600" />
+												) : (
+													<ClipboardIcon className="h-5 w-5" />
+												)}
+											</button>
+										</div>
 									</div>
 
 									<div className="mt-4 rounded-lg bg-yellow-50 p-4 text-sm leading-relaxed text-yellow-900">
@@ -102,48 +131,6 @@ export function ContactDrawer({
 										Angebot machen.
 									</div>
 
-									<Separator className="my-4" />
-									<p className="mb-3 text-sm font-medium text-gray-500">
-										Kontakt kopieren
-									</p>
-									<div className="space-y-3">
-										<div className="relative">
-											<button
-												onClick={() => copyToClipboard(emailAddress, 'email')}
-												className="group flex items-center gap-2 w-full p-3 bg-blue-50 hover:bg-blue-100 rounded-lg border border-blue-200 hover:border-blue-300 transition-all duration-200"
-											>
-												<div className="text-blue-600 font-medium flex-1">{emailAddress}</div>
-												{copiedItem === 'email' ? (
-													<CheckIcon className="w-4 h-4 text-green-600" />
-												) : (
-													<ClipboardIcon className="w-4 h-4 text-blue-500 group-hover:text-blue-600" />
-												)}
-											</button>
-											{copiedItem === 'email' && (
-												<div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-xs py-1 px-2 rounded shadow-lg">
-													E-Mail kopiert! ✓
-												</div>
-											)}
-										</div>
-										<div className="relative">
-											<button
-												onClick={() => copyToClipboard(phoneNumber, 'phone')}
-												className="group flex items-center gap-2 w-full p-3 bg-green-50 hover:bg-green-100 rounded-lg border border-green-200 hover:border-green-300 transition-all duration-200"
-											>
-												<div className="text-green-600 font-medium flex-1">{phoneNumber}</div>
-												{copiedItem === 'phone' ? (
-													<CheckIcon className="w-4 h-4 text-green-600" />
-												) : (
-													<ClipboardIcon className="w-4 h-4 text-green-500 group-hover:text-green-600" />
-												)}
-											</button>
-											{copiedItem === 'phone' && (
-												<div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-600 text-white text-xs py-1 px-2 rounded shadow-lg">
-													Telefon kopiert! ✓
-												</div>
-											)}
-										</div>
-									</div>
 								</div>
 							</div>
 							{/* <div className="flex justify-center m-5">
