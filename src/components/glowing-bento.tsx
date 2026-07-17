@@ -7,7 +7,6 @@ import {
 	Heart,
 	MapPin,
 	ShieldCheck,
-	Sparkles,
 	Star,
 } from "lucide-react";
 import { ContactDrawer } from "@/components/contact-drawer";
@@ -20,7 +19,7 @@ const proofPoints = [
 ];
 
 const sectionHighlights = [
-	"Keine Fahrt zur Waschhalle",
+	"Wir kommen zu Ihnen",
 	"Klare Pakete mit Startpreisen",
 	"Direkte Anfrage per Telefon oder WhatsApp",
 ];
@@ -28,7 +27,7 @@ const sectionHighlights = [
 const serviceOffers = [
 	{
 		icon: Car,
-		kicker: "Für Alltag, Familie & Gerüche",
+		kicker: "Beliebteste Wahl",
 		title: "Innenraum wie neu",
 		description:
 			"Tiefenreinigung für Sitze, Teppiche, Kofferraum und alle Oberflächen. Ideal, wenn das Auto wieder frisch riechen und gepflegt wirken soll.",
@@ -43,24 +42,6 @@ const serviceOffers = [
 			"Geruchsneutralisierung inklusive",
 		],
 		cta: "Innenreinigung anfragen",
-	},
-	{
-		icon: Sparkles,
-		kicker: "Beliebteste Wahl",
-		title: "Innen & außen komplett",
-		description:
-			"Die Rundum-Behandlung für sichtbaren Glanz und ein sauberes Gefühl beim Einsteigen. Der beste Mix aus Wirkung, Schutz und Werterhalt.",
-		image: "/images/IMG-20260320-WA0013.jpg",
-		alt: "Glänzendes Auto nach einer kompletten Innen- und Außenaufbereitung",
-		price: "ab 170 EUR",
-		duration: "ca. 240 Min",
-		bestFor: "Die beste Wahl, wenn das Auto sichtbar hochwertiger aussehen soll.",
-		features: [
-			"Innenreinigung komplett inklusive",
-			"Premium-Handwäsche und Felgenreinigung",
-			"Keramikpflege und Glanzveredelung",
-		],
-		cta: "Komplettpaket anfragen",
 		featured: true,
 	},
 	{

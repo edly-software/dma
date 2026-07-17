@@ -17,7 +17,7 @@ const pricingCategories = [
 		name: "INNENREINIGUNG",
 		description: "Komplette Innenraum Reinigung",
 		duration: "ca. 120 Min",
-		isPopular: false,
+		isPopular: true,
 		prices: [
 			{ type: "Kleinwagen", price: 75 },
 			{ type: "Lim./Kombi", price: 85 },
@@ -35,26 +35,6 @@ const pricingCategories = [
 		],
 	},
 	{
-		id: "innen-aussen",
-		name: "INNEN&AUSSENREINIGUNG",
-		description: "Rundum Komplettbehandlung",
-		duration: "ca. 240 Min",
-		isPopular: true,
-		prices: [
-			{ type: "Kleinwagen", price: 170 },
-			{ type: "Lim./Kombi", price: 185 },
-			{ type: "SUV", price: 205 },
-			{ type: "7 Sitzer/TR", price: 235 },
-		],
-		features: [
-			"Alles von Innenreinigung inklusive",
-			"Premium-Handwäsche",
-			"Spezialreinigung der Felgen",
-			"Keramikpflege",
-			"Glanzveredelung",
-		],
-	},
-	{
 		id: "1-stufig",
 		name: "1 STUFIGE POLITUR",
 		description: "Professionelle Politur",
@@ -67,8 +47,7 @@ const pricingCategories = [
 			{ type: "7 Sitzer/TR", price: 400 },
 		],
 		features: [
-			"Innenreinigun",
-			"Außenreinigung",
+			"Innenreinigung",
 			"Lackreinigung",
 			"Politur Stufe 1 – leichte Swirls & Kratzer entfernen, Glanz auffrischen",
 			"Lack entfetten",
@@ -89,7 +68,6 @@ const pricingCategories = [
 		],
 		features: [
 			"Innenreinigung",
-			"Außenreinigung",
 			"Lackreinigung",
 			"Politur Stufe 1 – starke Kratzer entfernen",
 			"Politur Stufe 2 – Finish auf Hochglanz",

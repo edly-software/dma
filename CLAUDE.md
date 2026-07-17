@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is **DerMobileAufbereiter (DMA)** - a German mobile car detailing service website built with Astro and React. The business offers professional interior and exterior car cleaning services directly at customer locations.
+This is **DerMobileAufbereiter (DMA)** - a German mobile car detailing service website built with Astro and React. The business offers professional interior car cleaning and paint polishing services directly at customer locations.
 
 ## Development Commands
 
