@@ -47,9 +47,9 @@
 
 :root {
   --radius: 0.625rem;
-  --brand: #f5c518;
-  --brand-soft: #fff6cc;
-  --brand-ink: #1a1400;
+  --brand: #2563eb;
+  --brand-soft: #eff6ff;
+  --brand-ink: #1e3a8a;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

@@ -56,7 +56,7 @@ function VideoModal({ onClose }: { onClose: () => void }) {
 					className="rounded-[2rem] p-[5px]"
 					style={{
 						background:
-							"linear-gradient(145deg, rgba(245,197,24,0.35) 0%, rgba(255,255,255,0.06) 60%, rgba(245,197,24,0.2) 100%)",
+							"linear-gradient(145deg, rgba(147,197,253,0.35) 0%, rgba(255,255,255,0.06) 60%, rgba(103,232,249,0.25) 100%)",
 						boxShadow:
 							"0 24px 64px rgba(0,0,0,0.7), 0 1px 0 rgba(255,255,255,0.08) inset",
 					}}
@@ -89,7 +89,7 @@ export function Hero() {
 				className="absolute inset-0"
 				style={{
 					backgroundImage:
-						"radial-gradient(circle, rgba(245,197,24,0.14) 1px, transparent 1px)",
+						"radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)",
 					backgroundSize: "28px 28px",
 				}}
 			/>
@@ -110,7 +110,7 @@ export function Hero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
 					>
-						<p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-brand xl:text-base">
+						<p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80 xl:text-base">
 							DerMobileAufbereiter
 						</p>
 
@@ -118,21 +118,21 @@ export function Hero() {
 							href="https://g.co/kgs/RNBDcBy"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1.5 text-sm text-brand backdrop-blur-sm transition hover:bg-brand/20 xl:px-4"
+							className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-400/10 px-3 py-1.5 text-sm text-cyan-200 backdrop-blur-sm transition hover:bg-cyan-400/20 xl:px-4"
 						>
 							<Star className="h-3.5 w-3.5 fill-current" />
 							<span className="tracking-wide">Google Bewertungen ansehen</span>
 						</a>
 
 						<div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 backdrop-blur-sm md:mb-10 xl:px-4 xl:py-1.5">
-							<div className="h-2 w-2 animate-pulse rounded-full bg-brand" />
+							<div className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
 							<span className="text-sm tracking-wide text-white/70 xl:text-base">
 								Mobile Aufbereitung
 							</span>
 						</div>
 
 						<h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
-							<span className="text-white/35 line-through decoration-brand decoration-[3px]">
+							<span className="text-white/40 line-through decoration-red-500 decoration-[3px]">
 								Schmutz adè
 							</span>
 							<br />
@@ -140,7 +140,7 @@ export function Hero() {
 								className="bg-clip-text text-transparent"
 								style={{
 									backgroundImage:
-										"linear-gradient(to right, #fde68a, #f5c518, #ffffff)",
+										"linear-gradient(to right, #93c5fd, #67e8f9, #ffffff)",
 								}}
 							>
 								Glanz olè!
@@ -183,7 +183,7 @@ export function Hero() {
 							className="relative aspect-video w-full rounded-[2rem] p-[5px]"
 							style={{
 								background:
-									"linear-gradient(145deg, rgba(245,197,24,0.35) 0%, rgba(255,255,255,0.06) 60%, rgba(245,197,24,0.18) 100%)",
+									"linear-gradient(145deg, rgba(147,197,253,0.35) 0%, rgba(255,255,255,0.06) 60%, rgba(103,232,249,0.2) 100%)",
 								boxShadow:
 									"0 8px 32px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.08) inset",
 							}}

@@ -74,7 +74,7 @@ export function GlowingBento() {
 				<div className="mx-auto max-w-6xl">
 					<div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr),minmax(22rem,0.55fr)] lg:items-end">
 						<div>
-							<div className="mb-5 inline-flex items-center gap-2 rounded-full border border-yellow-300 bg-yellow-50 px-4 py-1.5 text-sm font-semibold text-yellow-700">
+							<div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-4 py-1.5 text-sm font-semibold text-brand-ink">
 								<Heart className="h-3.5 w-3.5" />
 								DMA
 							</div>
@@ -88,7 +88,7 @@ export function GlowingBento() {
 							</p>
 						</div>
 
-						<div className="border-l-2 border-yellow-400 pl-5">
+						<div className="border-l-2 border-brand pl-5">
 							<p className="text-sm font-bold uppercase tracking-wide text-gray-500">
 								Warum Kunden buchen
 							</p>
@@ -98,7 +98,7 @@ export function GlowingBento() {
 										key={highlight}
 										className="flex gap-3 text-base font-semibold text-gray-950"
 									>
-										<CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-yellow-500" />
+										<CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
 										<span>{highlight}</span>
 									</li>
 								))}
@@ -116,7 +116,7 @@ export function GlowingBento() {
 									index > 0 ? "lg:border-l lg:px-5" : "lg:pr-5"
 								}`}
 							>
-								<point.icon className="h-4 w-4 shrink-0 text-yellow-500" />
+								<point.icon className="h-4 w-4 shrink-0 text-brand" />
 								<span>{point.label}</span>
 							</div>
 						))}
@@ -158,7 +158,7 @@ export function GlowingBento() {
 											{service.kicker}
 										</p>
 										{service.featured && (
-											<span className="border border-yellow-300 bg-yellow-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-yellow-800">
+											<span className="border border-brand/30 bg-brand-soft px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-brand-ink">
 												Meist gebucht
 											</span>
 										)}
@@ -191,7 +191,7 @@ export function GlowingBento() {
 										</div>
 									</div>
 
-									<p className="mt-5 border-l-2 border-yellow-400 pl-4 text-sm font-semibold leading-relaxed text-gray-950">
+									<p className="mt-5 border-l-2 border-brand pl-4 text-sm font-semibold leading-relaxed text-gray-950">
 										{service.bestFor}
 									</p>
 
@@ -201,7 +201,7 @@ export function GlowingBento() {
 												key={feature}
 												className="flex gap-2.5 text-sm leading-relaxed text-gray-700"
 											>
-												<CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-yellow-500" />
+												<CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
 												<span>{feature}</span>
 											</li>
 										))}

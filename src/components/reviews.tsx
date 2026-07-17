@@ -78,7 +78,7 @@ function BeforeAfterStack() {
 					className="group flex h-9 w-9 items-center justify-center rounded-full bg-brand-soft transition-colors hover:bg-brand"
 					aria-label="Vorheriges Vorher-Nachher Bild"
 				>
-					<IconArrowLeft className="h-5 w-5 text-brand-ink transition-transform group-hover:rotate-12" />
+					<IconArrowLeft className="h-5 w-5 text-brand-ink transition-transform group-hover:rotate-12 group-hover:text-white" />
 				</button>
 				<span className="font-mono text-sm tabular-nums text-neutral-400">
 					{active + 1} / {beforeAfterPairs.length}
@@ -88,7 +88,7 @@ function BeforeAfterStack() {
 					className="group flex h-9 w-9 items-center justify-center rounded-full bg-brand-soft transition-colors hover:bg-brand"
 					aria-label="Nächstes Vorher-Nachher Bild"
 				>
-					<IconArrowRight className="h-5 w-5 text-brand-ink transition-transform group-hover:-rotate-12" />
+					<IconArrowRight className="h-5 w-5 text-brand-ink transition-transform group-hover:-rotate-12 group-hover:text-white" />
 				</button>
 			</div>
 
@@ -107,7 +107,7 @@ export function Reviews() {
 					href="https://g.co/kgs/RNBDcBy"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand"
+					className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand hover:text-white"
 				>
 					<Star className="h-4 w-4 fill-brand text-brand" />
 					Google Bewertungen ansehen
@@ -165,7 +165,7 @@ export function Reviews() {
 					rel="noopener noreferrer"
 					className="group inline-flex items-center gap-3 rounded-full border-2 border-neutral-200 bg-white px-6 py-3 font-medium text-neutral-800 transition-all duration-200 hover:border-brand hover:shadow-md"
 				>
-					<IconBrandInstagram className="h-5 w-5 text-brand-ink" />
+					<IconBrandInstagram className="h-5 w-5 text-brand" />
 					Instagram besuchen
 				</a>
 			</div>

@@ -101,7 +101,7 @@ const PriceSection = ({ category, index }: { category: PricingCategory; index: n
 			}`}
 		>
 			<div className="mb-6 flex flex-wrap items-center gap-3">
-				<div className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-sm font-extrabold uppercase tracking-wider text-brand-ink md:text-base">
+				<div className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-sm font-extrabold uppercase tracking-wider text-white md:text-base">
 					{category.isPopular && <Flame className="h-4 w-4" />}
 					{category.name}
 				</div>

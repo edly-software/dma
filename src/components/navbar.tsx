@@ -37,7 +37,7 @@ export function Navigationbar() {
 						<NavbarButton
 							href="https://wa.me/4917643190053"
 							variant="primary"
-							className="bg-brand text-brand-ink shadow-none hover:bg-yellow-300"
+							className="bg-brand text-white shadow-none hover:bg-blue-500"
 						>
 							WhatsApp
 						</NavbarButton>
@@ -72,7 +72,7 @@ export function Navigationbar() {
 							</a>
 							<a
 								href="https://wa.me/4917643190053"
-								className="flex min-h-11 items-center justify-center rounded-lg bg-brand px-4 text-sm font-bold text-brand-ink"
+								className="flex min-h-11 items-center justify-center rounded-lg bg-brand px-4 text-sm font-bold text-white"
 							>
 								WhatsApp
 							</a>
