@@ -2,7 +2,7 @@
 
 ## 🚗 Project Overview
 
-**DerMobileAufbereiter** is a German mobile car detailing service website that offers professional interior and exterior car cleaning services directly at the customer's location.
+**DerMobileAufbereiter** is a German mobile car detailing service website that offers professional interior car cleaning and paint polishing services directly at the customer's location.
 
 ### Business Name
 - **German**: DerMobileAufbereiter
@@ -13,7 +13,7 @@
 
 ### Core Service
 - **Mobile car detailing service** - comes directly to customer's location
-- Specializes in **interior and exterior car cleaning/detailing**
+- Specializes in **interior car cleaning and paint polishing**
 - Professional automotive cleaning and restoration
 
 ### Target Market
@@ -158,12 +158,11 @@ bun astro ...
 
 ## 📈 Future Development Opportunities
 
-1. **Service Expansion** - Add exterior detailing packages
-2. **Geographic Growth** - Expand to additional German cities
-3. **Online Booking Enhancement** - More detailed scheduling options
-4. **Customer Portal** - Service history and loyalty programs
-5. **SEO Optimization** - Improve search engine visibility
-6. **Social Media Integration** - Instagram/Facebook showcase
+1. **Geographic Growth** - Expand to additional German cities
+2. **Online Booking Enhancement** - More detailed scheduling options
+3. **Customer Portal** - Service history and loyalty programs
+4. **SEO Optimization** - Improve search engine visibility
+5. **Social Media Integration** - Instagram/Facebook showcase
 
 ## 🔧 Technical Notes
 

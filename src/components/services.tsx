@@ -1,4 +1,4 @@
-import { Car, Sparkles, CarFront } from "lucide-react";
+import { Car, Sparkles } from "lucide-react";
 
 const services = [
     {
@@ -8,16 +8,10 @@ const services = [
         price: "ab 149€",
     },
     {
-        icon: <CarFront className="h-8 w-8 text-purple-600 dark:text-purple-400" />,
-        title: "Außenaufbereitung",
-        description: "Lackschonende Handwäsche, Politur und Versiegelung. Wir bringen den Glanz zurück und schützen Ihren Lack nachhaltig.",
-        price: "ab 199€",
-    },
-    {
         icon: <Sparkles className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />,
-        title: "Komplett-Service",
-        description: "Das Rundum-Sorglos-Paket. Innen- und Außenpflege kombiniert für das perfekte Ergebnis und maximalen Werterhalt.",
-        price: "ab 299€",
+        title: "Politur & Lackfinish",
+        description: "Professionelle Lackreinigung und Politur. Wir bringen den Glanz zurück und schützen Ihren Lack nachhaltig.",
+        price: "ab 280€",
     },
 ];
 
@@ -34,7 +28,7 @@ export function Services() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
                     {services.map((service, index) => (
                         <div
                             key={index}
