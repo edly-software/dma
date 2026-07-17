@@ -125,7 +125,7 @@ export function ContactDrawer({
 										</div>
 									</div>
 
-									<div className="mt-4 rounded-lg bg-yellow-50 p-4 text-sm leading-relaxed text-yellow-900">
+									<div className="mt-4 rounded-lg bg-brand-soft p-4 text-sm leading-relaxed text-brand-ink">
 										Tipp: Senden Sie Fahrzeugmodell, gewünschte Leistung und 2-3
 										mögliche Termine mit. Dann kann ich schneller ein konkretes
 										Angebot machen.

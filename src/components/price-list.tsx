@@ -94,57 +94,56 @@ const PriceSection = ({ category, index }: { category: PricingCategory; index: n
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true }}
 			transition={{ duration: 0.5, delay: index * 0.1 }}
-			className="relative"
+			className={`relative rounded-3xl border p-5 md:p-8 ${
+				category.isPopular
+					? "border-brand/40 bg-gradient-to-br from-brand/10 via-gray-900/80 to-gray-950"
+					: "border-gray-800 bg-gray-900/50"
+			}`}
 		>
-			{/* Category Badge */}
-			<div className="flex items-center gap-3 mb-5">
-				<div className={`inline-flex items-center gap-2 px-5 py-2 rounded-full font-extrabold text-sm md:text-base tracking-wider uppercase ${
-					category.isPopular
-						? "bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900"
-						: "bg-gradient-to-r from-yellow-400 to-yellow-300 text-gray-900"
-				}`}>
+			<div className="mb-6 flex flex-wrap items-center gap-3">
+				<div className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-sm font-extrabold uppercase tracking-wider text-white md:text-base">
 					{category.isPopular && <Flame className="h-4 w-4" />}
 					{category.name}
 				</div>
 				{category.isPopular && (
-					<span className="text-xs font-semibold text-yellow-400 border border-yellow-400/30 px-3 py-1 rounded-full">
+					<span className="rounded-full border border-brand/40 px-3 py-1 text-xs font-semibold text-brand">
 						Beliebt
 					</span>
 				)}
+				{category.duration && (
+					<span className="text-sm text-gray-400">{category.duration}</span>
+				)}
 			</div>
 
-			{/* Vehicle Type Headers + Prices Grid */}
-			<div className="grid grid-cols-1 lg:grid-cols-[1fr,auto] gap-4 lg:gap-8 items-start">
-				{/* Features - Left Side */}
-				<div className="order-2 lg:order-1 space-y-2">
-					{category.features.map((feature, idx) => (
-						<div key={idx} className="flex items-start gap-2.5">
-							<CheckIcon className="h-4 w-4 flex-shrink-0 mt-0.5 text-yellow-400" />
-							<span className="text-sm md:text-[15px] text-gray-300 leading-relaxed">
+			<p className="mb-6 text-sm text-gray-400 md:text-base">{category.description}</p>
+
+			<div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[1fr,auto] lg:gap-8">
+				<div className="order-2 space-y-2 lg:order-1">
+					{category.features.map((feature) => (
+						<div key={feature} className="flex items-start gap-2.5">
+							<CheckIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" />
+							<span className="text-sm leading-relaxed text-gray-300 md:text-[15px]">
 								{feature}
 							</span>
 						</div>
 					))}
 				</div>
 
-				{/* Price Table - Right Side */}
 				<div className="order-1 lg:order-2">
-					<div className="grid grid-cols-4 gap-2 md:gap-3 min-w-0 lg:min-w-[420px]">
-						{/* Column Headers with Icons */}
+					<div className="grid min-w-0 grid-cols-4 gap-2 md:gap-3 lg:min-w-[420px]">
 						{vehicleTypes.map((vt) => (
 							<div key={vt.label} className="flex flex-col items-center gap-1.5 pb-2">
-								<vt.icon className="h-6 w-6 md:h-7 md:w-7 text-yellow-400" />
-								<span className="text-[11px] md:text-xs font-medium text-gray-400 leading-tight text-center">
+								<vt.icon className="h-6 w-6 text-brand md:h-7 md:w-7" />
+								<span className="text-center text-[11px] font-medium leading-tight text-gray-400 md:text-xs">
 									{vt.label}
 								</span>
 							</div>
 						))}
-						{/* Prices */}
 						{category.prices.map((priceItem) => (
 							<div key={priceItem.type} className="text-center">
-								<div className="bg-gray-800/60 border border-gray-700/50 rounded-xl py-3 px-1 md:px-3 transition-all duration-200 hover:bg-gray-700/60 hover:border-gray-600/50">
-									<span className="text-lg md:text-2xl font-bold text-white">
-										{priceItem.price}€
+								<div className="rounded-xl border border-gray-700/50 bg-gray-800/60 px-1 py-3 transition-all duration-200 hover:border-brand/30 hover:bg-gray-700/60 md:px-3">
+									<span className="text-lg font-bold text-white md:text-2xl">
+										{priceItem.price}&nbsp;€
 									</span>
 								</div>
 							</div>
@@ -158,48 +157,37 @@ const PriceSection = ({ category, index }: { category: PricingCategory; index: n
 
 export default function PriceingSection() {
 	return (
-		<>
-			<section id="preise" className="py-12 md:py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
-				<div className="container mx-auto px-4 md:px-6">
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.6 }}
-						className="mx-auto max-w-3xl text-center mb-16"
-					>
-						<h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-							Preisliste
-						</h2>
-						<p className="text-lg text-gray-400">
-							Wir Kommen zu Ihnen!
-						</p>
-					</motion.div>
+		<section id="preise" className="scroll-mt-20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 py-12 md:py-20">
+			<div className="container mx-auto px-4 md:px-6">
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6 }}
+					className="mx-auto mb-12 max-w-3xl text-center md:mb-16"
+				>
+					<h2 className="mb-4 text-3xl font-extrabold text-white md:text-5xl">
+						Preisliste
+					</h2>
+					<p className="text-lg text-gray-400">Wir kommen zu Ihnen!</p>
+				</motion.div>
 
-					{/* Price Sections */}
-					<div className="max-w-5xl mx-auto space-y-12 md:space-y-16">
-						{pricingCategories.map((category, index) => (
-							<div key={category.id}>
-								<PriceSection category={category} index={index} />
-								{index < pricingCategories.length - 1 && (
-									<div className="mt-10 md:mt-14 border-t border-gray-800" />
-								)}
-							</div>
-						))}
-					</div>
-
-					{/* CTA Section */}
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.6, delay: 0.2 }}
-						className="max-w-3xl mx-auto mt-16 flex justify-center"
-					>
-						<ContactDrawer secondary={false} size="default" />
-					</motion.div>
+				<div className="mx-auto grid max-w-5xl gap-6 md:gap-8">
+					{pricingCategories.map((category, index) => (
+						<PriceSection key={category.id} category={category} index={index} />
+					))}
 				</div>
-			</section>
-		</>
+
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.6, delay: 0.2 }}
+					className="mx-auto mt-16 flex max-w-3xl justify-center"
+				>
+					<ContactDrawer secondary={false} size="default" />
+				</motion.div>
+			</div>
+		</section>
 	);
 }
