@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { BanknotesIcon } from "@heroicons/react/24/outline";
 import { ContactDrawer } from "./contact-drawer";
-import { Play, Star, X } from "lucide-react";
+import { Play, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 function HeroVideo() {
@@ -113,16 +113,6 @@ export function Hero() {
 						<p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80 xl:text-base">
 							DerMobileAufbereiter
 						</p>
-
-						<a
-							href="https://g.co/kgs/RNBDcBy"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-400/10 px-3 py-1.5 text-sm text-cyan-200 backdrop-blur-sm transition hover:bg-cyan-400/20 xl:px-4"
-						>
-							<Star className="h-3.5 w-3.5 fill-current" />
-							<span className="tracking-wide">Google Bewertungen ansehen</span>
-						</a>
 
 						<div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 backdrop-blur-sm md:mb-10 xl:px-4 xl:py-1.5">
 							<div className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
