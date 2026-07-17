@@ -70,7 +70,7 @@ src/
 
 - **Customer Photos**: Before/after images in `/public/images/` (e.g., `liviu_before.png`, `liviu_after.png`)
 - **Testimonials**: Real customer reviews with German names and feedback
-- **Typography**: Geist font family (included in `/public/fonts/`)
+- **Typography**: Bricolage Grotesque (self-hosted in `/public/fonts/bricolage/` for GDPR)
 
 ## Development Notes
 

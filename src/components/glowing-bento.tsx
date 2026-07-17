@@ -33,7 +33,7 @@ const serviceOffers = [
 			"Tiefenreinigung für Sitze, Teppiche, Kofferraum und alle Oberflächen. Ideal, wenn das Auto wieder frisch riechen und gepflegt wirken soll.",
 		image: "/images/IMG-20260227-WA0030.jpg",
 		alt: "Heller, frisch aufbereiteter Fahrzeuginnenraum nach einer mobilen Innenreinigung",
-		price: "ab 75 EUR",
+		price: "ab 75 €",
 		duration: "ca. 120 Min",
 		bestFor: "Perfekt vor Verkauf, Leasingrückgabe oder nach Familienalltag.",
 		features: [
@@ -52,7 +52,7 @@ const serviceOffers = [
 			"Professionelle Lackreinigung mit 1- oder 2-stufiger Politur. Entfernt matte Stellen, leichte Swirls und bringt Tiefe zurück in den Lack.",
 		image: "/images/politur-lackfinish.jpg",
 		alt: "Aufbereiteter Fahrzeuglack mit sichtbarem Glanz nach professioneller Politur",
-		price: "ab 280 EUR",
+		price: "ab 280 €",
 		duration: "nach Zustand",
 		bestFor: "Ideal bei mattem Lack, Mikrokratzern oder vor dem Fahrzeugverkauf.",
 		features: [
@@ -78,7 +78,7 @@ export function GlowingBento() {
 								<Heart className="h-3.5 w-3.5" />
 								DMA
 							</div>
-							<h2 className="max-w-4xl text-3xl font-black tracking-tight text-gray-950 sm:text-5xl">
+							<h2 className="max-w-4xl text-3xl font-extrabold tracking-tight text-gray-950 sm:text-5xl">
 								Autopflege, die man sofort sieht.
 							</h2>
 							<p className="mt-5 max-w-3xl text-lg leading-relaxed text-gray-600">
@@ -166,7 +166,7 @@ export function GlowingBento() {
 
 									<div className="grid gap-4 lg:grid-cols-[1fr,auto] lg:items-start">
 										<div>
-											<h3 className="text-2xl font-black tracking-tight text-gray-950 md:text-3xl">
+											<h3 className="text-2xl font-extrabold tracking-tight text-gray-950 md:text-3xl">
 												{service.title}
 											</h3>
 											<p className="mt-3 max-w-2xl text-base leading-relaxed text-gray-600">
