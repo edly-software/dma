@@ -1,208 +1,194 @@
-import {
-  ArrowUpRight,
-  Clock3,
-  Facebook,
-  Instagram,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const navigation = [
-  { label: "Leistungen", href: "#leistungen" },
-  { label: "Preise", href: "#preise" },
-  { label: "Kundenstimmen", href: "#bewertungen" },
-];
-
-const contact = [
-  {
-    label: "Anrufen",
-    value: "+49 176 43190053",
-    href: "tel:+4917643190053",
-    icon: Phone,
-  },
-  {
-    label: "E-Mail schreiben",
-    value: "dermobileaufbereiter@gmail.com",
-    href: "mailto:dermobileaufbereiter@gmail.com",
-    icon: Mail,
-  },
-  {
-    label: "Servicegebiet",
-    value: "Memmingen und Umgebung",
-    icon: MapPin,
-  },
+	{ label: "Leistungen", href: "/#leistungen" },
+	{ label: "Preise", href: "/#preise" },
+	{ label: "Referenzen", href: "/#bewertungen" },
+	{ label: "Ablauf & FAQ", href: "/#faq" },
 ];
 
 const social = [
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/dermobileaufbereiter",
-    icon: Instagram,
-  },
-  {
-    label: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=61559232703025",
-    icon: Facebook,
-  },
+	{
+		label: "Instagram",
+		href: "https://www.instagram.com/dermobileaufbereiter",
+	},
+	{
+		label: "Facebook",
+		href: "https://www.facebook.com/profile.php?id=61559232703025",
+	},
+	{
+		label: "Google Bewertungen",
+		href: "https://g.co/kgs/RNBDcBy",
+	},
 ];
 
 export function Footer() {
-  const year = new Date().getFullYear();
+	const year = new Date().getFullYear();
 
-  return (
-    <footer className="relative isolate overflow-hidden bg-[#050508] text-white">
-      <div
-        className="absolute inset-0 -z-20 opacity-70"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 10% 10%, rgba(34, 211, 238, 0.16), transparent 24rem), radial-gradient(circle at 90% 75%, rgba(59, 130, 246, 0.16), transparent 28rem)",
-        }}
-      />
-      <div
-        className="absolute inset-0 -z-10 opacity-35"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(255,255,255,0.16) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
+	return (
+		<footer className="bg-[#0B0B0C] text-[#F6F5F2]">
+			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				{/* Editorial Contact Statement */}
+				<div className="grid gap-8 border-b border-white/12 py-16 md:py-24 lg:grid-cols-12 lg:items-end">
+					<div className="lg:col-span-7">
+						<span className="font-mono text-xs uppercase tracking-[0.14em] text-[#8E8D87]">
+							Kontakt & Terminvereinbarung
+						</span>
+						<h2 className="mt-4 text-3xl leading-[1.06] font-bold tracking-[-0.03em] sm:text-5xl">
+							Wir kommen direkt zu Ihrem Fahrzeug.
+						</h2>
+					</div>
+					<div className="flex flex-wrap items-center gap-3 lg:col-span-5 lg:justify-end">
+						<a
+							href="https://wa.me/4917643190053?text=Hallo%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20mobile%20Autoaufbereitung.%20Wann%20w%C3%A4re%20ein%20Termin%20m%C3%B6glich%3F"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="group inline-flex h-12 items-center gap-2 rounded-full bg-[#F6F5F2] px-6 text-sm font-medium text-[#0B0B0C] transition-colors hover:bg-white"
+						>
+							<span>Per WhatsApp schreiben</span>
+							<ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+						</a>
+						<a
+							href="tel:+4917643190053"
+							className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 font-mono text-sm font-medium text-[#F6F5F2] transition-colors hover:border-white"
+						>
+							0176 43190053
+						</a>
+					</div>
+				</div>
 
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-10 px-1 py-12 md:grid-cols-2 lg:grid-cols-[1.3fr_0.7fr_1fr] lg:gap-14 lg:py-16">
-          <div>
-            <a
-              href="/"
-              className="group inline-flex items-center gap-3 rounded-xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
-              aria-label="DerMobileAufbereiter Startseite"
-            >
-              <span className="grid h-11 w-11 place-items-center rounded-xl border border-cyan-300/20 bg-cyan-300/10 text-sm font-black tracking-tight text-cyan-100">
-                DMA
-              </span>
-              <span>
-                <span className="block font-bold tracking-tight">
-                  DerMobileAufbereiter
-                </span>
-                <span className="block text-sm text-white/50">
-                  Mobile Fahrzeugpflege
-                </span>
-              </span>
-            </a>
-            <p className="mt-5 max-w-md text-sm leading-6 text-white/55 text-pretty">
-              Professionelle Autoaufbereitung mit Präzision, hochwertigen
-              Produkten und einem Service, der zu dir kommt.
-            </p>
-            <div className="mt-6 flex items-center gap-3">
-              {social.map(({ label, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`${label} öffnen`}
-                  className="grid h-11 w-11 place-items-center rounded-full border border-white/15 bg-white/[0.06] text-white/70 transition-colors hover:border-cyan-300/50 hover:bg-cyan-300/10 hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
-                >
-                  <Icon className="h-5 w-5" aria-hidden="true" />
-                </a>
-              ))}
-            </div>
-          </div>
+				{/* Structured Columns */}
+				<div className="grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-12">
+					<div className="lg:col-span-5">
+						<a href="/" className="inline-flex items-center gap-2.5">
+							<img
+								src="/logo.jpeg"
+								alt="DerMobileAufbereiter"
+								width={28}
+								height={28}
+								className="h-7 w-7 rounded object-cover"
+							/>
+							<span className="text-base font-bold tracking-tight text-[#F6F5F2]">
+								DerMobileAufbereiter
+							</span>
+						</a>
+						<p className="mt-4 max-w-sm text-sm leading-relaxed text-[#A09F99]">
+							Professionelle mobile Fahrzeugaufbereitung, Innenraumreinigung
+							und Lackpolitur in Memmingen und Umgebung.
+						</p>
+					</div>
 
-          <div>
-            <h3 className="text-sm font-semibold tracking-[0.16em] text-white/45 uppercase">
-              Entdecken
-            </h3>
-            <nav className="mt-5" aria-label="Footer Navigation">
-              <ul className="space-y-1">
-                {navigation.map(({ label, href }) => (
-                  <li key={href}>
-                    <a
-                      href={href}
-                      className="group inline-flex min-h-9 items-center gap-1.5 text-sm text-white/70 transition-colors hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
-                    >
-                      {label}
-                      <ArrowUpRight
-                        className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100"
-                        aria-hidden="true"
-                      />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
+					<div className="lg:col-span-2">
+						<h3 className="font-mono text-xs uppercase tracking-[0.14em] text-[#8E8D87]">
+							Navigation
+						</h3>
+						<ul className="mt-4 space-y-2.5 text-sm">
+							{navigation.map(({ label, href }) => (
+								<li key={href}>
+									<a
+										href={href}
+										className="text-[#D4D3CD] transition-colors hover:text-white"
+									>
+										{label}
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
 
-          <div>
-            <h3 className="text-sm font-semibold tracking-[0.16em] text-white/45 uppercase">
-              Kontakt
-            </h3>
-            <ul className="mt-5 space-y-4">
-              {contact.map(({ label, value, href, icon: Icon }) => (
-                <li key={label} className="flex gap-3">
-                  <Icon
-                    className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300"
-                    aria-hidden="true"
-                  />
-                  <div>
-                    <p className="text-xs text-white/40">{label}</p>
-                    {href ? (
-                      <a
-                        href={href}
-                        className="break-all text-sm text-white/75 transition-colors hover:text-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
-                      >
-                        {value}
-                      </a>
-                    ) : (
-                      <p className="text-sm text-white/75">{value}</p>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-5 flex items-center gap-2 text-xs text-white/45">
-              <Clock3 className="h-4 w-4 text-cyan-300" aria-hidden="true" />
-              Termine nach Vereinbarung
-            </p>
-          </div>
-        </div>
+					<div className="lg:col-span-2">
+						<h3 className="font-mono text-xs uppercase tracking-[0.14em] text-[#8E8D87]">
+							Profile
+						</h3>
+						<ul className="mt-4 space-y-2.5 text-sm">
+							{social.map(({ label, href }) => (
+								<li key={label}>
+									<a
+										href={href}
+										target="_blank"
+										rel="noreferrer"
+										className="group inline-flex items-center gap-1 text-[#D4D3CD] transition-colors hover:text-white"
+									>
+										<span>{label}</span>
+										<ArrowUpRight className="h-3.5 w-3.5 opacity-60 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
 
-        <div className="border-t border-white/10 px-1 py-6">
-          <div className="flex flex-col gap-4 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {year} DerMobileAufbereiter. Alle Rechte vorbehalten.</p>
-            <div className="flex gap-5">
-              <a className="transition-colors hover:text-cyan-200" href="/datenschutz">
-                Datenschutz
-              </a>
-              <a className="transition-colors hover:text-cyan-200" href="/impressum">
-                Impressum
-              </a>
-            </div>
-          </div>
-          <div className="mt-5 flex justify-center">
-            <a
-              href="https://g-unit-solutions.de"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2.5 rounded-lg px-2 py-1 text-xs text-white/40 transition-colors hover:text-white/70 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
-              aria-label="Website erstellt von G Unit Solutions — g-unit-solutions.de öffnen"
-            >
-              <span>Erstellt von</span>
-              <img
-                src="/logo_icon_light.svg"
-                alt=""
-                width={24}
-                height={24}
-                className="h-6 w-6 shrink-0 opacity-80 transition-opacity group-hover:opacity-100"
-                loading="lazy"
-                decoding="async"
-              />
-              <span className="font-medium text-white/55 transition-colors group-hover:text-cyan-200">
-                G Unit Solutions
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+					<div className="lg:col-span-3">
+						<h3 className="font-mono text-xs uppercase tracking-[0.14em] text-[#8E8D87]">
+							Direktkontakt
+						</h3>
+						<dl className="mt-4 space-y-2.5 text-sm text-[#D4D3CD]">
+							<div>
+								<dt className="sr-only">Telefon</dt>
+								<dd>
+									<a
+										href="tel:+4917643190053"
+										className="font-mono transition-colors hover:text-white"
+									>
+										+49 176 43190053
+									</a>
+								</dd>
+							</div>
+							<div>
+								<dt className="sr-only">E-Mail</dt>
+								<dd>
+									<a
+										href="mailto:dermobileaufbereiter@gmail.com"
+										className="break-all transition-colors hover:text-white"
+									>
+										dermobileaufbereiter@gmail.com
+									</a>
+								</dd>
+							</div>
+							<div className="pt-1 text-xs text-[#8E8D87]">
+								Memmingen & Umgebung · Termine nach Vereinbarung
+							</div>
+						</dl>
+					</div>
+				</div>
+
+				{/* Legal & Attribution Bar */}
+				<div className="flex flex-col gap-4 border-t border-white/12 py-6 text-xs text-[#8E8D87] sm:flex-row sm:items-center sm:justify-between">
+					<p>© {year} DerMobileAufbereiter. Alle Rechte vorbehalten.</p>
+
+					<div className="flex flex-wrap items-center gap-6">
+						<a
+							className="transition-colors hover:text-white"
+							href="/datenschutz"
+						>
+							Datenschutz
+						</a>
+						<a className="transition-colors hover:text-white" href="/impressum">
+							Impressum
+						</a>
+						<a
+							href="https://g-unit-solutions.de"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="group inline-flex items-center gap-2 text-[#8E8D87] transition-colors hover:text-white"
+							aria-label="Website erstellt von G Unit Solutions — g-unit-solutions.de öffnen"
+						>
+							<span>Erstellt von</span>
+							<img
+								src="/logo_icon_light.svg"
+								alt=""
+								width={18}
+								height={18}
+								className="h-4 w-4 shrink-0 opacity-75 transition-opacity group-hover:opacity-100"
+								loading="lazy"
+								decoding="async"
+							/>
+							<span className="font-medium text-[#D4D3CD] group-hover:text-white">
+								G Unit Solutions
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	);
 }

@@ -1,64 +1,44 @@
-import {
-	ArrowRight,
-	Car,
-	CarFront,
-	CheckCircle2,
-	Clock,
-	Heart,
-	MapPin,
-	ShieldCheck,
-	Star,
-} from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import { ContactDrawer } from "@/components/contact-drawer";
-
-const proofPoints = [
-	{ icon: MapPin, label: "Vor Ort in Memmingen" },
-	{ icon: Star, label: "Echte Kundenfahrzeuge" },
-	{ icon: ShieldCheck, label: "Sorgfältige Fahrzeugpflege" },
-	{ icon: Clock, label: "Flexible Termine" },
-];
-
-const sectionHighlights = [
-	"Wir kommen zu Ihnen",
-	"Klare Pakete mit Startpreisen",
-	"Direkte Anfrage per Telefon oder WhatsApp",
-];
 
 const serviceOffers = [
 	{
-		icon: Car,
-		kicker: "Beliebteste Wahl",
+		index: "01.1",
+		category: "Innenraum-Aufbereitung",
+		tag: "Meistgebucht",
 		title: "Innenraum wie neu",
 		description:
-			"Tiefenreinigung für Sitze, Teppiche, Kofferraum und alle Oberflächen. Ideal, wenn das Auto wieder frisch riechen und gepflegt wirken soll.",
+			"Gründliche Tiefenreinigung für Sitze, Teppiche, Kofferraum und sämtliche Oberflächen. Ideal, wenn das Fahrzeug wieder frisch riechen und gepflegt wirken soll.",
 		image: "/images/IMG-20260227-WA0030.jpg",
 		alt: "Heller, frisch aufbereiteter Fahrzeuginnenraum nach einer mobilen Innenreinigung",
 		price: "ab 75 €",
 		duration: "ca. 120 Min",
-		bestFor: "Perfekt vor Verkauf, Leasingrückgabe oder nach Familienalltag.",
+		bestFor: "Vor Fahrzeugverkauf, Leasingrückgabe oder nach dem Familienalltag.",
 		features: [
 			"Polster, Teppiche und Fußmatten shampooniert",
-			"Kunststoffpflege und Scheibenreinigung",
+			"Kunststoffpflege und streifenfreie Scheibenreinigung",
+			"Leder- und Alcantara-Behandlung",
 			"Geruchsneutralisierung inklusive",
 		],
 		cta: "Innenreinigung anfragen",
-		featured: true,
 	},
 	{
-		icon: CarFront,
-		kicker: "Für Glanz, Lack & Werterhalt",
+		index: "01.2",
+		category: "Exterieur & Lackschutz",
+		tag: "Inkl. Innenreinigung",
 		title: "Politur & Lackfinish",
 		description:
-			"Professionelle Lackreinigung mit 1- oder 2-stufiger Politur. Entfernt matte Stellen, leichte Swirls und bringt Tiefe zurück in den Lack.",
+			"Professionelle Lackreinigung mit 1- oder 2-stufiger maschineller Politur. Entfernt matte Stellen, Swirls sowie Kratzer und bringt Tiefe zurück in den Lack.",
 		image: "/images/politur-lackfinish.jpg",
 		alt: "Aufbereiteter Fahrzeuglack mit sichtbarem Glanz nach professioneller Politur",
 		price: "ab 280 €",
 		duration: "nach Zustand",
-		bestFor: "Ideal bei mattem Lack, Mikrokratzern oder vor dem Fahrzeugverkauf.",
+		bestFor: "Bei mattem Lack, Waschanlagen-Swirls, Mikrokratzern oder zum Werterhalt.",
 		features: [
-			"Lackreinigung und maschinelle Politur",
-			"Finish auf Hochglanz",
-			"Keramikpflege zum Schutz",
+			"Komplette Innenreinigung bereits enthalten",
+			"Lackreinigung, Entfettung & maschinelle Politur",
+			"Finish auf Hochglanz (1- oder 2-stufig)",
+			"Keramikpflege zum nachhaltigen Lackschutz",
 		],
 		cta: "Politur anfragen",
 	},
@@ -68,77 +48,38 @@ export function GlowingBento() {
 	return (
 		<section
 			id="leistungen"
-			className="scroll-mt-20 overflow-hidden bg-white py-16 md:py-24"
+			className="scroll-mt-16 bg-[#F6F5F2] py-20 text-[#0B0B0C] md:py-28"
 		>
-			<div className="container mx-auto px-4 md:px-6">
-				<div className="mx-auto max-w-6xl">
-					<div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr),minmax(22rem,0.55fr)] lg:items-end">
-						<div>
-							<div className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-4 py-1.5 text-sm font-semibold text-brand-ink">
-								<Heart className="h-3.5 w-3.5" />
-								DMA
-							</div>
-							<h2 className="max-w-4xl text-3xl font-extrabold tracking-tight text-gray-950 sm:text-5xl">
-								Autopflege, die man sofort sieht.
-							</h2>
-							<p className="mt-5 max-w-3xl text-lg leading-relaxed text-gray-600">
-								Wir reinigen und pflegen Ihr Fahrzeug dort, wo es steht. Wählen
-								Sie das passende Paket und fragen Sie direkt einen Termin in
-								Memmingen und Umgebung an.
-							</p>
-						</div>
-
-						<div className="border-l-2 border-brand pl-5">
-							<p className="text-sm font-bold uppercase tracking-wide text-gray-500">
-								Warum Kunden buchen
-							</p>
-							<ul className="mt-4 space-y-3">
-								{sectionHighlights.map((highlight) => (
-									<li
-										key={highlight}
-										className="flex gap-3 text-base font-semibold text-gray-950"
-									>
-										<CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
-										<span>{highlight}</span>
-									</li>
-								))}
-							</ul>
-						</div>
+			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				{/* Editorial Section Header */}
+				<div className="grid gap-6 pb-14 lg:grid-cols-12 lg:items-end lg:pb-20">
+					<div className="lg:col-span-4">
+						<span className="font-mono text-xs uppercase tracking-[0.14em] text-[#6E6D68]">
+							01 — Leistungen
+						</span>
 					</div>
-
-					<div className="mt-8 grid border-y border-gray-200 sm:grid-cols-2 lg:grid-cols-4">
-						{proofPoints.map((point, index) => (
-							<div
-								key={point.label}
-								className={`flex min-h-14 items-center gap-3 py-4 text-sm font-semibold text-gray-700 ${
-									index % 2 === 0 ? "sm:pr-5" : "sm:border-l sm:px-5"
-								} ${index > 1 ? "border-t sm:border-t lg:border-t-0" : ""} ${
-									index > 0 ? "lg:border-l lg:px-5" : "lg:pr-5"
-								}`}
-							>
-								<point.icon className="h-4 w-4 shrink-0 text-brand" />
-								<span>{point.label}</span>
-							</div>
-						))}
+					<div className="lg:col-span-8">
+						<h2 className="text-3xl leading-[1.06] font-bold tracking-[-0.03em] sm:text-5xl">
+							Autopflege, die man sofort sieht.
+						</h2>
+						<p className="mt-4 max-w-2xl text-base leading-relaxed text-[#52524E] sm:text-lg">
+							Wir reinigen und pflegen Ihr Fahrzeug direkt dort, wo es steht.
+							Zwei klar strukturierte Leistungsbereiche mit transparenten
+							Startpreisen für Memmingen und Umgebung.
+						</p>
 					</div>
 				</div>
 
-				<div className="mt-12 divide-y divide-gray-200 border-y border-gray-200">
+				{/* Architectural Service Rows */}
+				<div className="divide-y divide-black/[0.08] border-y border-black/[0.08]">
 					{serviceOffers.map((service) => (
 						<article
 							key={service.title}
-							className="grid gap-6 py-8 md:grid-cols-[26rem_1fr] md:gap-10 md:py-10 xl:grid-cols-[30rem_1fr] xl:gap-14"
+							className="grid gap-8 py-12 lg:grid-cols-12 lg:gap-12 lg:py-16"
 						>
-							<div
-								className="relative aspect-[4/3] rounded-[2rem] p-[5px] md:aspect-[5/4]"
-								style={{
-									background:
-										"linear-gradient(145deg, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.04) 58%, rgba(0,0,0,0.12) 100%)",
-									boxShadow:
-										"0 8px 28px rgba(15, 23, 42, 0.12), 0 1px 0 rgba(255,255,255,0.9) inset",
-								}}
-							>
-								<div className="h-full w-full overflow-hidden rounded-[1.6rem] bg-gray-100">
+							{/* Photography Column */}
+							<div className="lg:col-span-5">
+								<div className="aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#E6E4DC]">
 									<img
 										src={service.image}
 										alt={service.alt}
@@ -148,79 +89,76 @@ export function GlowingBento() {
 								</div>
 							</div>
 
-							<div className="flex min-w-0 flex-col justify-between">
+							{/* Specification Column */}
+							<div className="flex flex-col justify-between lg:col-span-7">
 								<div>
-									<div className="mb-4 flex flex-wrap items-center gap-3">
-										<div className="flex h-10 w-10 items-center justify-center border border-gray-200 bg-white">
-											<service.icon className="h-5 w-5 text-gray-950" />
-										</div>
-										<p className="text-sm font-bold uppercase tracking-wide text-gray-500">
-											{service.kicker}
-										</p>
-										{service.featured && (
-											<span className="border border-brand/30 bg-brand-soft px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-brand-ink">
-												Meist gebucht
+									{/* Index & Tag */}
+									<div className="flex flex-wrap items-center justify-between gap-2 border-b border-black/[0.08] pb-3">
+										<span className="font-mono text-xs uppercase tracking-[0.12em] text-[#6E6D68]">
+											{service.index} — {service.category}
+										</span>
+										<span className="rounded-full border border-black/15 px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-wider text-[#0B0B0C]">
+											{service.tag}
+										</span>
+									</div>
+
+									{/* Title & Description */}
+									<div className="mt-5 grid gap-4 sm:grid-cols-[1fr_auto] sm:items-baseline">
+										<h3 className="text-2xl font-bold tracking-[-0.025em] sm:text-3xl">
+											{service.title}
+										</h3>
+										<div className="flex items-baseline gap-4 font-mono text-xs text-[#6E6D68]">
+											<span>
+												Startpreis:{" "}
+												<strong className="text-sm font-semibold text-[#0B0B0C]">
+													{service.price}
+												</strong>
 											</span>
-										)}
-									</div>
-
-									<div className="grid gap-4 lg:grid-cols-[1fr,auto] lg:items-start">
-										<div>
-											<h3 className="text-2xl font-extrabold tracking-tight text-gray-950 md:text-3xl">
-												{service.title}
-											</h3>
-											<p className="mt-3 max-w-2xl text-base leading-relaxed text-gray-600">
-												{service.description}
-											</p>
-										</div>
-										<div className="grid grid-cols-2 gap-px overflow-hidden border border-gray-200 bg-gray-200 text-sm lg:min-w-56">
-											<div className="bg-white p-3">
-												<p className="text-xs uppercase tracking-wide text-gray-500">
-													Preis
-												</p>
-												<p className="mt-1 font-bold text-gray-950">{service.price}</p>
-											</div>
-											<div className="bg-white p-3">
-												<p className="text-xs uppercase tracking-wide text-gray-500">
-													Dauer
-												</p>
-												<p className="mt-1 font-bold text-gray-950">
-													{service.duration}
-												</p>
-											</div>
+											<span>·</span>
+											<span>Dauer: {service.duration}</span>
 										</div>
 									</div>
 
-									<p className="mt-5 border-l-2 border-brand pl-4 text-sm font-semibold leading-relaxed text-gray-950">
-										{service.bestFor}
+									<p className="mt-3 max-w-2xl text-base leading-relaxed text-[#52524E]">
+										{service.description}
 									</p>
 
-									<ul className="mt-5 grid gap-3 sm:grid-cols-3">
+									{/* Scope Grid */}
+									<div className="mt-6 grid gap-x-8 gap-y-2.5 border-t border-black/[0.08] pt-5 sm:grid-cols-2">
 										{service.features.map((feature) => (
-											<li
+											<div
 												key={feature}
-												className="flex gap-2.5 text-sm leading-relaxed text-gray-700"
+												className="flex items-start gap-2.5 text-sm text-[#0B0B0C]"
 											>
-												<CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
+												<span className="font-mono text-xs text-[#6E6D68]">
+													—
+												</span>
 												<span>{feature}</span>
-											</li>
+											</div>
 										))}
-									</ul>
+									</div>
+
+									<p className="mt-5 text-xs text-[#6E6D68]">
+										<span className="font-medium text-[#0B0B0C]">
+											Empfohlen:
+										</span>{" "}
+										{service.bestFor}
+									</p>
 								</div>
 
-								<div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+								<div className="mt-8 flex flex-wrap items-center gap-4 pt-2">
 									<ContactDrawer
-										secondary={false}
-										size="lg"
+										variant="primary"
+										size="default"
 										label={service.cta}
-										service={service.title}
+										service={`${service.title} (${service.price})`}
 									/>
 									<a
 										href="#preise"
-										className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md px-4 text-sm font-semibold text-gray-500 transition hover:text-gray-950"
+										className="group inline-flex items-center gap-1.5 text-sm font-medium text-[#52524E] transition-colors hover:text-[#0B0B0C]"
 									>
-										Preise vergleichen
-										<ArrowRight className="h-4 w-4" />
+										<span>Preise nach Fahrzeugklasse</span>
+										<ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
 									</a>
 								</div>
 							</div>

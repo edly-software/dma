@@ -1,9 +1,6 @@
 "use client";
-import { motion } from "motion/react";
-import { Button } from "@/components/ui/button";
-import { BanknotesIcon } from "@heroicons/react/24/outline";
 import { ContactDrawer } from "./contact-drawer";
-import { Play, X } from "lucide-react";
+import { Play, X, ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 function HeroVideo() {
@@ -16,7 +13,7 @@ function HeroVideo() {
 			autoPlay
 			playsInline
 			preload="metadata"
-			className="pointer-events-none h-full w-full object-cover object-top"
+			className="pointer-events-none h-full w-full object-cover object-center"
 		/>
 	);
 }
@@ -36,169 +33,147 @@ function VideoModal({ onClose }: { onClose: () => void }) {
 
 	return (
 		<div
-			className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+			className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 md:p-8"
 			onClick={onClose}
 		>
-			<div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
 			<div
 				className="relative w-full max-w-5xl"
 				onClick={(e) => e.stopPropagation()}
 			>
-				<button
-					onClick={onClose}
-					className="absolute -top-10 right-0 flex items-center gap-1.5 text-sm text-white/60 transition-colors hover:text-white"
-				>
-					<X className="h-4 w-4" />
-					Schließen
-				</button>
-
-				<div
-					className="rounded-[2rem] p-[5px]"
-					style={{
-						background:
-							"linear-gradient(145deg, rgba(147,197,253,0.35) 0%, rgba(255,255,255,0.06) 60%, rgba(103,232,249,0.25) 100%)",
-						boxShadow:
-							"0 24px 64px rgba(0,0,0,0.7), 0 1px 0 rgba(255,255,255,0.08) inset",
-					}}
-				>
-					<div className="overflow-hidden rounded-[1.6rem] bg-black">
-						<video
-							src="/test.mp4"
-							poster="/images/IMG-20260227-WA0030.jpg"
-							controls
-							autoPlay
-							playsInline
-							className="aspect-video w-full"
-						/>
-					</div>
+				<div className="mb-3 flex items-center justify-between text-xs text-white/80">
+					<span className="font-mono uppercase tracking-[0.14em]">
+						DerMobileAufbereiter — Arbeitsprobe
+					</span>
+					<button
+						type="button"
+						onClick={onClose}
+						className="inline-flex cursor-pointer items-center gap-1.5 text-xs font-medium text-white/70 transition-colors hover:text-white"
+					>
+						<X className="h-4 w-4" />
+						Schließen
+					</button>
+				</div>
+				<div className="overflow-hidden rounded-xl border border-white/15 bg-black">
+					<video
+						src="/test.mp4"
+						poster="/images/IMG-20260227-WA0030.jpg"
+						controls
+						autoPlay
+						playsInline
+						className="aspect-video w-full"
+					/>
 				</div>
 			</div>
 		</div>
 	);
 }
 
+const specs = [
+	{ index: "01", label: "Einsatzgebiet", value: "Memmingen & Umgebung" },
+	{ index: "02", label: "Arbeitsweise", value: "100 % Mobil vor Ort" },
+	{ index: "03", label: "Zeitaufwand", value: "Ab ca. 120 Minuten" },
+	{ index: "04", label: "Konditionen", value: "Festpreise ab 75 €" },
+];
+
 export function Hero() {
 	const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
 	return (
-		<section
-			className="relative w-full min-h-screen overflow-hidden text-white"
-			style={{ backgroundColor: "#050508" }}
-		>
-			<div
-				className="absolute inset-0"
-				style={{
-					backgroundImage:
-						"radial-gradient(circle, rgba(255,255,255,0.12) 1px, transparent 1px)",
-					backgroundSize: "28px 28px",
-				}}
-			/>
-
-			<div
-				className="absolute inset-0"
-				style={{
-					background:
-						"radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, #050508 100%)",
-				}}
-			/>
-
-			<div className="relative z-10 container mx-auto flex min-h-screen items-center px-4 md:px-6">
-				<div className="flex w-full flex-col items-center gap-10 py-24 lg:flex-row lg:gap-16">
-					<motion.div
-						className="flex-1 text-center lg:text-left"
-						initial={{ opacity: 0, y: 32 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+		<section className="w-full bg-[#F6F5F2] text-[#0B0B0C]">
+			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				{/* Top Editorial Meta Strip */}
+				<div className="flex flex-wrap items-center justify-between gap-4 border-b border-black/[0.08] py-4 text-xs">
+					<span className="font-mono uppercase tracking-[0.14em] text-[#6E6D68]">
+						Mobile Fahrzeugaufbereitung — Vor-Ort-Service
+					</span>
+					<a
+						href="https://g.co/kgs/RNBDcBy"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="group inline-flex items-center gap-1.5 font-mono text-xs font-medium text-[#0B0B0C] transition-opacity hover:opacity-70"
 					>
-						<p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-cyan-300/80 xl:text-base">
-							DerMobileAufbereiter
-						</p>
+						<span>5.0 ★ Google Bewertungen</span>
+						<ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+					</a>
+				</div>
 
-						<div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 backdrop-blur-sm md:mb-10 xl:px-4 xl:py-1.5">
-							<div className="h-2 w-2 animate-pulse rounded-full bg-cyan-400" />
-							<span className="text-sm tracking-wide text-white/70 xl:text-base">
-								Mobile Aufbereitung
-							</span>
-						</div>
-
-						<h1 className="mb-6 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
-							<span className="text-white/40 line-through decoration-red-500 decoration-[3px]">
-								Schmutz adè
-							</span>
-							<br />
-							<span
-								className="bg-clip-text text-transparent"
-								style={{
-									backgroundImage:
-										"linear-gradient(to right, #93c5fd, #67e8f9, #ffffff)",
-								}}
-							>
-								Glanz olè!
-							</span>
+				{/* Main Editorial Split */}
+				<div className="grid items-end gap-10 py-14 md:py-20 lg:grid-cols-12 lg:gap-12 lg:py-24">
+					<div className="lg:col-span-6">
+						<h1 className="text-5xl leading-[0.98] font-bold tracking-[-0.035em] sm:text-6xl md:text-7xl xl:text-[5.25rem]">
+							<span className="block text-[#9A9890]">Schmutz adè.</span>
+							<span className="mt-1 block text-[#0B0B0C]">Glanz olè.</span>
 						</h1>
 
 						<h2 className="sr-only">
 							Mobile Autoaufbereitung und Fahrzeugpflege in Memmingen
 						</h2>
 
-						<p className="mb-8 max-w-xl text-base font-light leading-relaxed text-white/60 sm:text-lg xl:max-w-2xl xl:text-xl 2xl:text-2xl">
-							Professionelle Innenaufbereitung –{" "}
-							<span className="font-medium text-white">direkt vor deiner Tür.</span>{" "}
-							Wir kommen zu dir nach Memmingen und Umgebung.
+						<p className="mt-7 max-w-md text-base leading-relaxed text-[#52524E] sm:text-lg">
+							Professionelle Innenraum-Tiefenreinigung, mehrstufige Lackpolitur
+							und Keramikpflege — direkt vor Ihrer Tür in Memmingen und
+							Umgebung.
 						</p>
 
-						<div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
-							<ContactDrawer secondary={false} />
-							<Button
-								variant="secondary"
+						<div className="mt-9 flex flex-wrap items-center gap-3">
+							<ContactDrawer
 								size="lg"
-								className="flex w-full gap-2 border border-white/25 bg-white/10 text-sm text-white shadow-lg backdrop-blur-sm transition-all duration-200 hover:bg-white/20 hover:text-white sm:w-auto xl:text-base"
-								asChild
+								variant="primary"
+								label="Termin vereinbaren"
+							/>
+							<a
+								href="#preise"
+								className="inline-flex h-12 items-center justify-center rounded-full border border-[#0B0B0C]/20 px-6 text-sm font-medium text-[#0B0B0C] transition-colors hover:border-[#0B0B0C]"
 							>
-								<a href="#preise">
-									<BanknotesIcon className="h-5 w-5" />
-									<span>Preisliste ansehen</span>
-								</a>
-							</Button>
+								Preisliste ansehen
+							</a>
 						</div>
-					</motion.div>
+					</div>
 
-					<motion.div
-						className="w-full max-w-lg flex-1 lg:max-w-none xl:flex-[1.3]"
-						initial={{ opacity: 0, y: 32 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
-					>
-						<div
-							className="relative aspect-video w-full rounded-[2rem] p-[5px]"
-							style={{
-								background:
-									"linear-gradient(145deg, rgba(147,197,253,0.35) 0%, rgba(255,255,255,0.06) 60%, rgba(103,232,249,0.2) 100%)",
-								boxShadow:
-									"0 8px 32px rgba(0,0,0,0.6), 0 1px 0 rgba(255,255,255,0.08) inset",
-							}}
-						>
-							<div
-								className="relative h-full w-full overflow-hidden rounded-[1.6rem]"
-								style={{
-									background: "rgba(0,0,0,0.4)",
-									boxShadow: "0 0 0 1px rgba(255,255,255,0.10) inset",
-								}}
-							>
+					{/* Clean Editorial Video Frame */}
+					<div className="lg:col-span-6">
+						<div className="overflow-hidden rounded-xl bg-[#0B0B0C]">
+							<div className="aspect-[16/10] w-full overflow-hidden">
 								<HeroVideo />
 							</div>
 						</div>
-
-						<div className="mt-4 flex justify-center lg:justify-start">
+						<div className="mt-3 flex items-center justify-between text-xs text-[#6E6D68]">
+							<span className="font-mono uppercase tracking-[0.12em]">
+								Fig. 01 — Innen- & Lackaufbereitung vor Ort
+							</span>
 							<button
+								type="button"
 								onClick={() => setIsVideoModalOpen(true)}
-								className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/80 backdrop-blur-sm transition-all hover:bg-white/15 hover:text-white"
+								className="inline-flex cursor-pointer items-center gap-1.5 font-medium text-[#0B0B0C] transition-opacity hover:opacity-70"
 							>
-								<Play className="h-3.5 w-3.5 fill-current" />
-								Video abspielen
+								<Play className="h-3 w-3 fill-current" />
+								<span>Video mit Ton abspielen</span>
 							</button>
 						</div>
-					</motion.div>
+					</div>
+				</div>
+			</div>
+
+			{/* Exposed Hairline Spec Bar */}
+			<div className="border-y border-black/[0.08]">
+				<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+					<div className="grid grid-cols-2 divide-y divide-black/[0.08] sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+						{specs.map((spec, idx) => (
+							<div
+								key={spec.index}
+								className={`py-5 ${
+									idx > 0 ? "sm:pl-6" : ""
+								} ${idx < 3 ? "sm:pr-6" : ""}`}
+							>
+								<span className="block font-mono text-[11px] uppercase tracking-[0.12em] text-[#6E6D68]">
+									{spec.index} / {spec.label}
+								</span>
+								<span className="mt-1 block text-sm font-semibold text-[#0B0B0C] sm:text-base">
+									{spec.value}
+								</span>
+							</div>
+						))}
+					</div>
 				</div>
 			</div>
 

@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { FooterWrapper } from '@/components/footer-wrapper.tsx';
 ---
 
 <html lang="de">
@@ -23,77 +24,75 @@ import '../styles/global.css';
 		<meta property="og:locale" content="de_DE" />
 		
 		<!-- Mobile & Theme -->
-		<meta name="theme-color" content="#2563eb" />
+		<meta name="theme-color" content="#F6F5F2" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 	</head>
-	<body class="font-sans bg-gray-50 min-h-screen">
-		<div class="container mx-auto px-4 py-12 max-w-4xl">
-			<!-- Header Navigation -->
-			<div class="mb-8">
-				<a href="/" class="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 transition-colors">
-					<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-					</svg>
-					<span>Zurück zur Startseite</span>
+	<body class="font-sans bg-[#F6F5F2] text-[#0B0B0C] min-h-screen flex flex-col">
+		<header class="border-b border-black/[0.08]">
+			<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+				<a href="/" class="flex items-center gap-2.5 text-sm font-bold tracking-tight text-[#0B0B0C]">
+					<img src="/logo.jpeg" alt="DerMobileAufbereiter" width="28" height="28" class="h-7 w-7 rounded object-cover" />
+					<span>DerMobileAufbereiter</span>
+				</a>
+				<a href="/" class="font-mono text-xs uppercase tracking-[0.12em] text-[#52524E] hover:text-[#0B0B0C]">
+					← Zurück zur Startseite
 				</a>
 			</div>
+		</header>
 
-			<!-- Content -->
-			<div class="bg-white rounded-lg shadow-lg p-8">
-				<h1 class="text-3xl font-bold text-gray-900 mb-8">Impressum</h1>
-				
-				<div class="prose prose-lg max-w-none">
-					<section class="mb-8">
-						<h2 class="text-2xl font-semibold text-gray-800 mb-4">Angaben gemäß § 5 TMG</h2>
-						<div class="bg-gray-50 p-6 rounded-lg">
-							<p class="text-gray-700 mb-2"><strong>Edward Ghita</strong></p>
-							<p class="text-gray-700 mb-2">DerMobileAufbereiter (Kleingewerbe)</p>
-							<p class="text-gray-700 mb-2">Laberstraße 23</p>
-							<p class="text-gray-700 mb-4">87700 Memmingen<br />Deutschland</p>
-							
-							<div class="border-t border-gray-200 pt-4">
-								<h3 class="text-lg font-semibold text-gray-800 mb-3">Kontakt:</h3>
-								<p class="text-gray-700 mb-2">Telefon: 0176 43190053</p>
-								<p class="text-gray-700 mb-4">E-Mail: dermobileaufbereiter@gmail.com</p>
-							</div>
-
-							<div class="border-t border-gray-200 pt-4">
-								<h3 class="text-lg font-semibold text-gray-800 mb-3">Unternehmerkennzeichnung:</h3>
-								<p class="text-gray-700">Kleingewerbe gemäß § 19 UStG – keine Ausweisung der Umsatzsteuer.</p>
-							</div>
-						</div>
-					</section>
-
-					<hr class="border-gray-200 my-8" />
-
-					<section class="mb-8">
-						<h2 class="text-2xl font-semibold text-gray-800 mb-4">Haftung für Inhalte</h2>
-						<p class="text-gray-700 leading-relaxed">
-							Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf dieser Website verantwortlich.
-							Nach §§ 8 bis 10 TMG sind wir nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Bei Bekanntwerden von Rechtsverstößen werden entsprechende Inhalte umgehend entfernt.
-						</p>
-					</section>
-
-					<hr class="border-gray-200 my-8" />
-
-					<section class="mb-8">
-						<h2 class="text-2xl font-semibold text-gray-800 mb-4">Haftung für Links</h2>
-						<p class="text-gray-700 leading-relaxed">
-							Unsere Website enthält Links zu externen Webseiten Dritter. Auf deren Inhalte haben wir keinen Einfluss und übernehmen deshalb keine Gewähr. Für die Inhalte der verlinkten Seiten ist der jeweilige Anbieter verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar.
-						</p>
-					</section>
-
-					<hr class="border-gray-200 my-8" />
-
-					<section class="mb-8">
-						<h2 class="text-2xl font-semibold text-gray-800 mb-4">Urheberrecht</h2>
-						<p class="text-gray-700 leading-relaxed">
-							Die durch uns erstellten Inhalte auf dieser Website unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Vervielfältigung und Verbreitung außerhalb der Grenzen des Urheberrechts bedürfen unserer schriftlichen Zustimmung.
-						</p>
-					</section>
-				</div>
+		<main class="mx-auto w-full max-w-4xl flex-1 px-4 py-16 sm:px-6 md:py-24">
+			<div class="border-b border-black/[0.08] pb-8">
+				<span class="font-mono text-xs uppercase tracking-[0.14em] text-[#6E6D68]">Rechtliches</span>
+				<h1 class="mt-2 text-4xl font-bold tracking-[-0.03em] sm:text-5xl">Impressum</h1>
 			</div>
-		</div>
+
+			<div class="divide-y divide-black/[0.08] text-sm sm:text-base">
+				<section class="py-8">
+					<h2 class="text-lg font-bold text-[#0B0B0C] mb-4">Angaben gemäß § 5 TMG</h2>
+					<div class="space-y-1 text-[#52524E]">
+						<p class="font-semibold text-[#0B0B0C]">Edward Ghita</p>
+						<p>DerMobileAufbereiter (Kleingewerbe)</p>
+						<p>Laberstraße 23</p>
+						<p>87700 Memmingen, Deutschland</p>
+					</div>
+
+					<div class="mt-6 space-y-1 text-[#52524E]">
+						<p class="font-mono text-xs uppercase tracking-[0.12em] text-[#6E6D68] mb-2">Kontakt</p>
+						<p>Telefon: <a href="tel:+4917643190053" class="text-[#0B0B0C] underline underline-offset-4">0176 43190053</a></p>
+						<p>E-Mail: <a href="mailto:dermobileaufbereiter@gmail.com" class="text-[#0B0B0C] underline underline-offset-4">dermobileaufbereiter@gmail.com</a></p>
+					</div>
+
+					<div class="mt-6 text-[#52524E]">
+						<p class="font-mono text-xs uppercase tracking-[0.12em] text-[#6E6D68] mb-2">Unternehmerkennzeichnung</p>
+						<p>Kleingewerbe gemäß § 19 UStG – keine Ausweisung der Umsatzsteuer.</p>
+					</div>
+				</section>
+
+				<section class="py-8">
+					<h2 class="text-lg font-bold text-[#0B0B0C] mb-3">Haftung für Inhalte</h2>
+					<p class="text-[#52524E] leading-relaxed">
+						Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf dieser Website verantwortlich.
+						Nach §§ 8 bis 10 TMG sind wir nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen. Bei Bekanntwerden von Rechtsverstößen werden entsprechende Inhalte umgehend entfernt.
+					</p>
+				</section>
+
+				<section class="py-8">
+					<h2 class="text-lg font-bold text-[#0B0B0C] mb-3">Haftung für Links</h2>
+					<p class="text-[#52524E] leading-relaxed">
+						Unsere Website enthält Links zu externen Webseiten Dritter. Auf deren Inhalte haben wir keinen Einfluss und übernehmen deshalb keine Gewähr. Für die Inhalte der verlinkten Seiten ist der jeweilige Anbieter verantwortlich. Zum Zeitpunkt der Verlinkung waren keine Rechtsverstöße erkennbar.
+					</p>
+				</section>
+
+				<section class="py-8">
+					<h2 class="text-lg font-bold text-[#0B0B0C] mb-3">Urheberrecht</h2>
+					<p class="text-[#52524E] leading-relaxed">
+						Die durch uns erstellten Inhalte auf dieser Website unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Vervielfältigung und Verbreitung außerhalb der Grenzen des Urheberrechts bedürfen unserer schriftlichen Zustimmung.
+					</p>
+				</section>
+			</div>
+		</main>
+
+		<FooterWrapper client:only />
 	</body>
 </html>

@@ -1,17 +1,42 @@
 "use client";
 
-import { IconBrandGoogle, IconBrandInstagram, IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "motion/react";
-import { useMemo, useState } from "react";
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { AnimatePresence, motion } from "motion/react";
+import { useState, useEffect } from "react";
 import { Compare } from "@/components/ui/compare";
-import { Star } from "lucide-react";
+import { X, ArrowUpRight } from "lucide-react";
 
 const beforeAfterPairs = [
-	{ before: "/images/oro_before.png",            after: "/images/oro_after.png" },
-	{ before: "/images/liviu_before.png",          after: "/images/liviu_after.png" },
-	{ before: "/images/michelle_before.png",       after: "/images/michelle_after.png" },
-	{ before: "/images/weiterer_kunde_before.png", after: "/images/weiterer_kunde_after.png" },
-	{ before: "/images/weiter_before.png",         after: "/images/weiter_after.png" },
+	{
+		id: "01",
+		title: "Tiefenreinigung & Polster",
+		before: "/images/oro_before.png",
+		after: "/images/oro_after.png",
+	},
+	{
+		id: "02",
+		title: "Cockpit & Fußraum",
+		before: "/images/liviu_before.png",
+		after: "/images/liviu_after.png",
+	},
+	{
+		id: "03",
+		title: "Sitz- & Teppichaufbereitung",
+		before: "/images/michelle_before.png",
+		after: "/images/michelle_after.png",
+	},
+	{
+		id: "04",
+		title: "Kompletter Innenraum",
+		before: "/images/weiterer_kunde_before.png",
+		after: "/images/weiterer_kunde_after.png",
+	},
+	{
+		id: "05",
+		title: "Detail- & Oberflächenpflege",
+		before: "/images/weiter_before.png",
+		after: "/images/weiter_after.png",
+	},
 ];
 
 const galleryImages = [
@@ -30,145 +55,272 @@ const galleryImages = [
 	"/images/IMG-20260227-WA0030.jpg",
 ];
 
-const cardRotations = [-6, 4, -3, 7, -5];
-
-function BeforeAfterStack() {
+function BeforeAfterStudio() {
 	const [active, setActive] = useState(0);
-	const rotations = useMemo(() => cardRotations, []);
 
 	const handleNext = () => setActive((p) => (p + 1) % beforeAfterPairs.length);
 	const handlePrev = () =>
 		setActive((p) => (p - 1 + beforeAfterPairs.length) % beforeAfterPairs.length);
 
+	const activePair = beforeAfterPairs[active];
+
 	return (
-		<div className="flex flex-col items-center gap-6">
-			<div className="relative h-72 w-72 md:h-96 md:w-96">
-				<AnimatePresence>
-					{beforeAfterPairs.map((pair, index) => (
-						<motion.div
-							key={pair.before}
-							initial={{ opacity: 0, scale: 0.9, rotate: rotations[index] ?? 0 }}
-							animate={{
-								opacity: index === active ? 1 : 0.6,
-								scale: index === active ? 1 : 0.95,
-								rotate: index === active ? 0 : rotations[index] ?? 0,
-								zIndex: index === active ? 40 : beforeAfterPairs.length - index,
-								y: index === active ? [0, -12, 0] : 0,
-							}}
-							exit={{ opacity: 0, scale: 0.9 }}
-							transition={{ duration: 0.4, ease: "easeInOut" }}
-							className="absolute inset-0 origin-bottom"
+		<div className="flex flex-col justify-between">
+			<div>
+				<div className="mb-4 flex items-center justify-between border-b border-black/[0.08] pb-3">
+					<div>
+						<span className="font-mono text-xs uppercase tracking-[0.12em] text-[#6E6D68]">
+							Vergleich {activePair.id} / 05 — {activePair.title}
+						</span>
+					</div>
+					<div className="flex items-center gap-1.5">
+						<button
+							type="button"
+							onClick={handlePrev}
+							className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border border-black/15 text-[#0B0B0C] transition-colors hover:border-black"
+							aria-label="Vorheriges Bild"
 						>
-							<Compare
-								firstImage={pair.before}
-								secondImage={pair.after}
-								firstImageClassName="object-cover object-left-top"
-								secondImageClassname="object-cover object-left-top"
-								className="h-full w-full rounded-3xl"
-								slideMode="drag"
-							/>
-						</motion.div>
+							<IconArrowLeft className="h-3.5 w-3.5" />
+						</button>
+						<button
+							type="button"
+							onClick={handleNext}
+							className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border border-black/15 text-[#0B0B0C] transition-colors hover:border-black"
+							aria-label="Nächstes Bild"
+						>
+							<IconArrowRight className="h-3.5 w-3.5" />
+						</button>
+					</div>
+				</div>
+
+				<div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-[#0B0B0C]">
+					<Compare
+						key={activePair.before}
+						firstImage={activePair.before}
+						secondImage={activePair.after}
+						firstImageClassName="object-cover object-center"
+						secondImageClassname="object-cover object-center"
+						className="h-full w-full"
+						slideMode="drag"
+					/>
+				</div>
+			</div>
+
+			<div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+				<div className="flex items-center gap-1">
+					{beforeAfterPairs.map((pair, idx) => (
+						<button
+							key={pair.id}
+							type="button"
+							onClick={() => setActive(idx)}
+							className={`h-7 cursor-pointer rounded px-2.5 font-mono text-xs transition-colors ${
+								idx === active
+									? "bg-[#0B0B0C] text-[#F6F5F2]"
+									: "text-[#6E6D68] hover:text-[#0B0B0C]"
+							}`}
+						>
+							{pair.id}
+						</button>
 					))}
-				</AnimatePresence>
-			</div>
-
-			<div className="flex items-center gap-4">
-				<button
-					onClick={handlePrev}
-					className="group flex h-9 w-9 items-center justify-center rounded-full bg-brand-soft transition-colors hover:bg-brand"
-					aria-label="Vorheriges Vorher-Nachher Bild"
-				>
-					<IconArrowLeft className="h-5 w-5 text-brand-ink transition-transform group-hover:rotate-12 group-hover:text-white" />
-				</button>
-				<span className="font-mono text-sm tabular-nums text-neutral-400">
-					{active + 1} / {beforeAfterPairs.length}
+				</div>
+				<span className="font-mono text-[11px] uppercase tracking-wider text-[#6E6D68]">
+					Regler ziehen
 				</span>
-				<button
-					onClick={handleNext}
-					className="group flex h-9 w-9 items-center justify-center rounded-full bg-brand-soft transition-colors hover:bg-brand"
-					aria-label="Nächstes Vorher-Nachher Bild"
-				>
-					<IconArrowRight className="h-5 w-5 text-brand-ink transition-transform group-hover:-rotate-12 group-hover:text-white" />
-				</button>
 			</div>
-
-			<p className="text-xs uppercase tracking-wide text-neutral-400">
-				Ziehen zum Vergleichen
-			</p>
 		</div>
 	);
 }
 
 export function Reviews() {
+	const [showAll, setShowAll] = useState(false);
+	const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+	const visibleImages = showAll ? galleryImages : galleryImages.slice(0, 6);
+
+	useEffect(() => {
+		if (lightboxIndex === null) return;
+		const onKey = (e: KeyboardEvent) => {
+			if (e.key === "Escape") setLightboxIndex(null);
+			if (e.key === "ArrowRight")
+				setLightboxIndex((i) =>
+					i !== null ? (i + 1) % galleryImages.length : null,
+				);
+			if (e.key === "ArrowLeft")
+				setLightboxIndex((i) =>
+					i !== null
+						? (i - 1 + galleryImages.length) % galleryImages.length
+						: null,
+				);
+		};
+		document.addEventListener("keydown", onKey);
+		return () => document.removeEventListener("keydown", onKey);
+	}, [lightboxIndex]);
+
 	return (
-		<section className="container mx-auto px-4 py-8 md:py-12">
-			<div className="mb-10 flex justify-center md:mb-12">
-				<a
-					href="https://g.co/kgs/RNBDcBy"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-4 py-2 text-sm font-semibold text-brand-ink transition hover:bg-brand hover:text-white"
-				>
-					<Star className="h-4 w-4 fill-brand text-brand" />
-					Google Bewertungen ansehen
-				</a>
-			</div>
-
-			<div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
-				<div className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand-soft px-3 py-1">
-					<div className="h-2 w-2 rounded-full bg-brand" />
-					<span className="text-sm tracking-wide text-brand-ink/70">Galerie</span>
-				</div>
-				<h2 className="mb-4 text-2xl font-extrabold text-neutral-900 sm:text-3xl md:text-4xl">
-					Unsere Arbeit
-				</h2>
-				<p className="mx-auto max-w-xl text-lg text-neutral-500">
-					Vorher & Nachher sowie Eindrücke aus unseren Aufbereitungen.
-				</p>
-			</div>
-
-			<div className="mx-auto flex max-w-6xl flex-col items-start gap-12 lg:flex-row lg:gap-16">
-				<div className="flex w-full flex-shrink-0 justify-center lg:w-auto lg:justify-start">
-					<BeforeAfterStack />
-				</div>
-
-				<div className="flex-1 columns-2 gap-3 space-y-3 sm:columns-3">
-					{galleryImages.map((src, i) => (
-						<div
-							key={src}
-							className="break-inside-avoid overflow-hidden rounded-2xl bg-neutral-100"
-						>
-							<img
-								src={src}
-								alt={`Professionelle Autoaufbereitung in Memmingen - Vorher Nachher Ergebnis ${i + 1}`}
-								className="h-auto w-full object-cover transition-transform duration-500 hover:scale-105"
-								loading="lazy"
-							/>
+		<section
+			id="bewertungen"
+			className="scroll-mt-16 border-b border-black/[0.08] bg-[#F6F5F2] py-20 text-[#0B0B0C] md:py-28"
+		>
+			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+				{/* Editorial Section Header */}
+				<div className="grid gap-6 pb-14 lg:grid-cols-12 lg:items-end lg:pb-20">
+					<div className="lg:col-span-4">
+						<span className="font-mono text-xs uppercase tracking-[0.14em] text-[#6E6D68]">
+							03 — Referenzen
+						</span>
+					</div>
+					<div className="flex flex-col justify-between gap-6 lg:col-span-8 md:flex-row md:items-end">
+						<div>
+							<h2 className="text-3xl leading-[1.06] font-bold tracking-[-0.03em] sm:text-5xl">
+								Ergebnisse am Kundenfahrzeug.
+							</h2>
+							<p className="mt-3 max-w-xl text-base text-[#52524E]">
+								Unbearbeitete Vorher-Nachher-Vergleiche und Dokumentationen
+								unserer Aufbereitungen in Memmingen.
+							</p>
 						</div>
-					))}
+
+						<div className="flex flex-wrap items-center gap-5 text-xs font-medium">
+							<a
+								href="https://g.co/kgs/RNBDcBy"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="group inline-flex items-center gap-1 border-b border-black/30 pb-0.5 text-[#0B0B0C] transition-colors hover:border-black"
+							>
+								<span>Google Bewertungen (5.0 ★)</span>
+								<ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+							</a>
+							<a
+								href="https://instagram.com/dermobileaufbereiter"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="group inline-flex items-center gap-1 border-b border-black/30 pb-0.5 text-[#0B0B0C] transition-colors hover:border-black"
+							>
+								<span>Instagram</span>
+								<ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+							</a>
+						</div>
+					</div>
+				</div>
+
+				{/* 12-Column Editorial Split */}
+				<div className="grid gap-12 lg:grid-cols-12">
+					{/* Left: Vorher / Nachher */}
+					<div className="lg:col-span-5">
+						<BeforeAfterStudio />
+					</div>
+
+					{/* Right: Clean Architectural Archive Grid */}
+					<div className="lg:col-span-7">
+						<div className="mb-4 flex items-center justify-between border-b border-black/[0.08] pb-3">
+							<span className="font-mono text-xs uppercase tracking-[0.12em] text-[#6E6D68]">
+								Arbeitsarchiv — Memmingen
+							</span>
+							<span className="font-mono text-xs text-[#6E6D68]">
+								{visibleImages.length} / {galleryImages.length} Aufnahmen
+							</span>
+						</div>
+
+						<div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+							{visibleImages.map((src, i) => (
+								<button
+									key={src}
+									type="button"
+									onClick={() => setLightboxIndex(i)}
+									className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-lg bg-[#E6E4DC] text-left"
+								>
+									<img
+										src={src}
+										alt={`Autoaufbereitung Memmingen – Ergebnis ${i + 1}`}
+										className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+										loading="lazy"
+									/>
+									<span className="absolute bottom-2 left-2 rounded bg-black/65 px-1.5 py-0.5 font-mono text-[10px] text-white opacity-0 transition-opacity group-hover:opacity-100">
+										{String(i + 1).padStart(2, "0")}
+									</span>
+								</button>
+							))}
+						</div>
+
+						<div className="mt-5 flex justify-end">
+							<button
+								type="button"
+								onClick={() => setShowAll((s) => !s)}
+								className="cursor-pointer font-mono text-xs uppercase tracking-[0.12em] text-[#0B0B0C] underline underline-offset-4 transition-opacity hover:opacity-70"
+							>
+								{showAll
+									? "Ansicht reduzieren"
+									: `Alle ${galleryImages.length} Aufnahmen anzeigen`}
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
 
-			<div className="mt-14 flex flex-col justify-center gap-4 sm:flex-row">
-				<a
-					href="https://g.co/kgs/RNBDcBy"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="group inline-flex items-center gap-3 rounded-full border-2 border-neutral-200 bg-white px-6 py-3 font-medium text-neutral-800 transition-all duration-200 hover:border-brand hover:shadow-md"
-				>
-					<IconBrandGoogle className="h-5 w-5 text-brand" />
-					Google Bewertungen ansehen
-				</a>
-				<a
-					href="https://instagram.com/dermobileaufbereiter"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="group inline-flex items-center gap-3 rounded-full border-2 border-neutral-200 bg-white px-6 py-3 font-medium text-neutral-800 transition-all duration-200 hover:border-brand hover:shadow-md"
-				>
-					<IconBrandInstagram className="h-5 w-5 text-brand" />
-					Instagram besuchen
-				</a>
-			</div>
+			{/* Lightbox Modal */}
+			<AnimatePresence>
+				{lightboxIndex !== null && (
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+						onClick={() => setLightboxIndex(null)}
+					>
+						<div
+							className="relative w-full max-w-4xl"
+							onClick={(e) => e.stopPropagation()}
+						>
+							<div className="mb-3 flex items-center justify-between text-xs text-white/80">
+								<span className="font-mono">
+									Aufnahme {String(lightboxIndex + 1).padStart(2, "0")} /{" "}
+									{galleryImages.length}
+								</span>
+								<button
+									type="button"
+									onClick={() => setLightboxIndex(null)}
+									className="inline-flex cursor-pointer items-center gap-1.5 text-xs text-white/70 hover:text-white"
+								>
+									<X className="h-4 w-4" />
+									Schließen
+								</button>
+							</div>
+
+							<div className="relative overflow-hidden rounded-xl bg-black">
+								<img
+									src={galleryImages[lightboxIndex]}
+									alt={`Ergebnis ${lightboxIndex + 1}`}
+									className="max-h-[78vh] w-full object-contain"
+								/>
+
+								<button
+									type="button"
+									onClick={() =>
+										setLightboxIndex(
+											(lightboxIndex - 1 + galleryImages.length) %
+												galleryImages.length,
+										)
+									}
+									className="absolute top-1/2 left-3 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-colors hover:bg-black"
+									aria-label="Vorheriges Bild"
+								>
+									<IconArrowLeft className="h-4 w-4" />
+								</button>
+								<button
+									type="button"
+									onClick={() =>
+										setLightboxIndex((lightboxIndex + 1) % galleryImages.length)
+									}
+									className="absolute top-1/2 right-3 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white transition-colors hover:bg-black"
+									aria-label="Nächstes Bild"
+								>
+									<IconArrowRight className="h-4 w-4" />
+								</button>
+							</div>
+						</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</section>
 	);
 }
